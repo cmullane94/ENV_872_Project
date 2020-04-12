@@ -431,90 +431,184 @@ summary {
 <tr class="odd">
 <td><strong>Year</strong></td>
 <td>Year of data collection</td>
-<td></td>
+<td>Integer</td>
 </tr>
 <tr class="even">
 <td><strong>Region</strong></td>
 <td>The island group (Palm, Magnetic, Whitsunday or Keppel) of the coral reef that was surveyed</td>
-<td></td>
+<td>Factor</td>
 </tr>
 <tr class="odd">
 <td><strong>Zone</strong></td>
 <td>Indicates if data were collected in a no-take zone established in 1987 (NTR 1987), a no-take zone established in 2004 (NTR 2004), or a zone where fishing is allowed (Fished)</td>
-<td></td>
+<td>Factor</td>
 </tr>
 <tr class="even">
 <td><strong>Total Fish Densit_mean</strong></td>
 <td>Mean number of fish observed per 1000 m<sup>2</sup> at the specified site</td>
-<td></td>
+<td>Numeric</td>
 </tr>
 <tr class="odd">
 <td><strong>Total Fish Densit_SE</strong></td>
 <td>The standard error of the mean number of fish observed per 1000 m<sup>2</sup> at the specified site</td>
-<td></td>
+<td>Numeric</td>
 </tr>
 <tr class="even">
 <td><strong>Fish Species richness_mean</strong></td>
 <td>The mean number of fish species observed at the specified site</td>
-<td></td>
+<td>Numeric</td>
 </tr>
 <tr class="odd">
 <td><strong>Fish Species richness_SE</strong></td>
 <td>The standard error of the mean number of fish species observed at the specified site</td>
-<td></td>
+<td>Numeric</td>
 </tr>
 <tr class="even">
 <td><strong>Fishery Target Spp_mean</strong></td>
 <td>Mean number of fish species designated as ‘Primary target’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
-<td></td>
+<td>Numeric</td>
 </tr>
 <tr class="odd">
 <td><strong>Fishery Target Spp_SE</strong></td>
-<td>The standard error of the mean number of fish species designated as ‘Primary target’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
-<td></td>
+<td>Standard error of the mean number of fish species designated as ‘Primary target’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Numeric</td>
 </tr>
 <tr class="even">
 <td><strong>Grazers_mean</strong></td>
 <td>Mean number of fish species listed as ‘grazers’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
-<td></td>
+<td>Numeric</td>
 </tr>
 <tr class="odd">
 <td><strong>Grazers_SE</strong></td>
-<td></td>
-<td></td>
+<td>Standard error of the mean number of fish species listed as ‘grazers’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Numeric</td>
 </tr>
 <tr class="even">
 <td><strong>Corallivores_mean</strong></td>
-<td></td>
-<td></td>
+<td>Mean number of fish species listed as ‘corallivores’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Numeric</td>
 </tr>
 <tr class="odd">
 <td><strong>Coraliivores_SE</strong></td>
-<td></td>
+<td>Numeric</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><strong>Planktivores_mean</strong></td>
+<td>Mean number of fish species listed as ‘planktivores’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Numeric</td>
+</tr>
+<tr class="odd">
+<td><strong>Planktivores_SE</strong></td>
+<td>Standard error of the mean number of fish species listed as ‘planktivores’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Numeric</td>
+</tr>
+<tr class="even">
+<td><strong>Territorial Pomacentrids_mean</strong></td>
+<td>Mean number of fish species listed as ‘territorial pomacentrids’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Numeric</td>
+</tr>
+<tr class="odd">
+<td><strong>Territorial Pomacentrids_SE</strong></td>
+<td>Numeric</td>
 <td></td>
-<td></td>
+</tr>
+<tr class="even">
+<td><strong>Plectropomus spp_mean</strong></td>
+<td>Mean number of observed fish species in the genus <strong><em>Plectropomus</em></strong> (i.e., coral groupers; all species of coral groupers observed are listed in the <code>eAtlas_fish_groups_status.csv</code> metadata file)</td>
+<td>Numeric</td>
+</tr>
+<tr class="odd">
+<td><strong>Plectropomus spp_SE</strong></td>
+<td>Standard error of the mean number of observed fish species in the genus <strong><em>Plectropomus</em></strong></td>
+<td>Numeric</td>
+</tr>
+<tr class="even">
+<td><strong>SCI_mean</strong></td>
+<td>Mean structural complexity index at each site. Individual SCI values range from 1 to 25, with values closer to 1 indicating less structural complexity and values closer to 25 indicating more structural complexity. Each SCI estimate was calculated by multiplying visual estimates of reef slope angle (1-5) by reef slope rugosity (1-5). These values were estimated for each 10m section of each 50m transect for a total of 5 estimates per transect. With 5 transects deployed per site, a total of 25 SCI values were estimated per site. These 25 values were averaged to obtain the mean SCI.</td>
+<td>Numeric</td>
+</tr>
+<tr class="odd">
+<td><strong>SCI_SE</strong></td>
+<td>Standard error of the mean SCI at each site</td>
+<td>Numeric</td>
+</tr>
+<tr class="even">
+<td><strong>LCC_mean</strong></td>
+<td>Mean live hard and soft coral % cover</td>
+<td>Numeric</td>
+</tr>
+<tr class="odd">
+<td><strong>LCC_SE</strong></td>
+<td>Srandard error of the mean live hard and soft coral % cover</td>
+<td>Numeric</td>
+</tr>
+<tr class="even">
+<td><strong>LHC_mean</strong></td>
+<td>Mean live hard coral % cover</td>
+<td>Numeric</td>
+</tr>
+<tr class="odd">
+<td><strong>LHC_SE</strong></td>
+<td>Standard error of the mean live hard coral % cover</td>
+<td>Numeric</td>
+</tr>
+<tr class="even">
+<td><strong>MAC_mean</strong></td>
+<td>Mean macroalgae % cover (includes only fleshy algae, not turf algae)</td>
+<td>Numeric</td>
+</tr>
+<tr class="odd">
+<td><strong>MAC_SE</strong></td>
+<td>Standard error of the mean macroalgae % cover</td>
+<td>Numeric</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Planktivores_SE (PlanktivSE)</li>
-<li>Territorial Pomacentrids_mean (TerrPomaMn)</li>
-<li>Territorial Pomacentrids_SE (TerrPomaSE)</li>
-<li>Plectropomus spp_mean (PlectSppMn)</li>
-<li>Plectropomus spp_SE (PlectSppSE)</li>
-<li>SCI_mean - Structural complexity Index.. An index (1-25) calculated by multiplying our visual estimates of reef slope angle (1-5) by reef slope rugosity (Complexity 1-5). These values are estimated for each 10m section of each 50m transect. 5 transects per site = 25 SCI estimates per site. The e-atlas data we have provided is site means… i.e.. the mean of those 25 values.</li>
-<li>LCC - Live coral cover (percent cover), live hard and soft coral pooled.</li>
-<li>LHC - Live hard coral cover (%), live hard coral only.</li>
-<li>MAC - Macro Algae Cover % (fleshy algas only, does not include turf algae)</li>
-<li>Fish Line_SUM - is the pooled number of lines recorded on the 5 transects surveyed at each site. = total number of lines/1500m2.</li>
-<li>Line Accumulation Rate - number of lines accumulated per month.</li>
-</ul>
-<p><strong>Site</strong>: The ID of the site (where five transect surveys were conducted) within the specified zone, region, and year.</p>
-<p><strong>No. Transect</strong>: The number of transects deployed in the specified zone, region, and year.</p>
+<p><code>eAtlas_fish_benthos_GBR_sites_raw.csv</code> contains the following additional column:</p>
+<table>
+<colgroup>
+<col width="48%"></col>
+<col width="35%"></col>
+<col width="16%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dataset Column</th>
+<th>Description</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Site</strong></td>
+<td>The ID of the site (where five transect surveys were conducted) within the specified zone, region, and year</td>
+<td>Factor</td>
+</tr>
+</tbody>
+</table>
+<p><code>eAtlas_fish_benthos_GBR_zones_raw.csv</code> contains the following additional column:</p>
+<table>
+<colgroup>
+<col width="48%"></col>
+<col width="35%"></col>
+<col width="16%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dataset Column</th>
+<th>Description</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>No. Transect</strong></td>
+<td>The number of transects deployed in the specified zone, region, and year</td>
+<td>Integer</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="scripts-and-code" class="section level2">
 <h2>Scripts and code</h2>

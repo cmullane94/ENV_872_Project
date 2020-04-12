@@ -65,8 +65,6 @@ Files in the data folder are named according to the following convention: `datab
 
 <For each data file in the repository, describe the data contained in each column. Include the column name, a description of the information, the class of data, and any units associated with the data. Create a list or table for each data file.> 
 
-The class of data?
-
 Both `eAtlas_fish_benthos_GBR_sites_raw.csv` and `eAtlas_fish_benthos_GBR_zones_raw.csv` contain the following columns: 
 
 - SE - Standard Error
@@ -74,35 +72,45 @@ Both `eAtlas_fish_benthos_GBR_sites_raw.csv` and `eAtlas_fish_benthos_GBR_zones_
 
 Dataset Column | Description | Class
 ---------------| ----------- | -----
-**Year** | Year of data collection |
-**Region** | The island group (Palm, Magnetic, Whitsunday or Keppel) of the coral reef that was surveyed |
-**Zone** | Indicates if data were collected in a no-take zone established in 1987 (NTR 1987), a no-take zone established in 2004 (NTR 2004), or a zone where fishing is allowed (Fished) |
-**Total Fish Densit_mean** | Mean number of fish observed per 1000 m^2^ at the specified site |
-**Total Fish Densit_SE** | The standard error of the mean number of fish observed per 1000 m^2^ at the specified site |
-**Fish Species richness_mean** | The mean number of fish species observed at the specified site |
-**Fish Species richness_SE** | The standard error of the mean number of fish species observed at the specified site |
-**Fishery Target Spp_mean** |  Mean number of fish species designated as 'Primary target’ in the `eAtlas_fish_groups_status.csv` metadata file |
-**Fishery Target Spp_SE** | The standard error of the mean number of fish species designated as 'Primary target’ in the `eAtlas_fish_groups_status.csv` metadata file |
-**Grazers_mean** | Mean number of fish species listed as ‘grazers’ in the `eAtlas_fish_groups_status.csv` metadata file |
-**Grazers_SE**|
-**Corallivores_mean** |
-**Coraliivores_SE** |
-**Planktivores_mean** |
-**Planktivores_SE** |
-**Territorial Pomacentrids_mean** |
-**Territorial Pomacentrids_SE** |
-**Plectropomus spp_mean** |
-**Plectropomus spp_SE** |
-**SCI_mean** | Structural complexity Index.. An index (1-25) calculated by multiplying our visual estimates of reef slope angle (1-5) by reef slope rugosity (Complexity 1-5). These values are estimated for each 10m section of each 50m transect. 5 transects per site = 25 SCI estimates per site. The e-atlas data we have provided is site means… i.e.. the mean of those 25 values.
-**LCC** | Live coral cover (percent cover), live hard and soft coral pooled.
-**LHC** | Live hard coral cover (%), live hard coral only.
-**MAC** | Macro Algae Cover % (fleshy algas only, does not include turf algae)
-**Fish Line_SUM** | is the pooled number of lines recorded on the 5 transects surveyed at each site. = total number of lines/1500m2.
-**Line Accumulation Rate** | number of lines accumulated per month.
+**Year** | Year of data collection | Integer
+**Region** | The island group (Palm, Magnetic, Whitsunday or Keppel) of the coral reef that was surveyed | Factor
+**Zone** | Indicates if data were collected in a no-take zone established in 1987 (NTR 1987), a no-take zone established in 2004 (NTR 2004), or a zone where fishing is allowed (Fished) | Factor
+**Total Fish Densit_mean** | Mean number of fish observed per 1000 m^2^ at the specified site | Numeric
+**Total Fish Densit_SE** | The standard error of the mean number of fish observed per 1000 m^2^ at the specified site | Numeric
+**Fish Species richness_mean** | The mean number of fish species observed at the specified site | Numeric
+**Fish Species richness_SE** | The standard error of the mean number of fish species observed at the specified site | Numeric
+**Fishery Target Spp_mean** |  Mean number of fish species designated as 'Primary target’ in the `eAtlas_fish_groups_status.csv` metadata file | Numeric
+**Fishery Target Spp_SE** | Standard error of the mean number of fish species designated as 'Primary target’ in the `eAtlas_fish_groups_status.csv` metadata file | Numeric
+**Grazers_mean** | Mean number of fish species listed as ‘grazers’ in the `eAtlas_fish_groups_status.csv` metadata file | Numeric
+**Grazers_SE** | Standard error of the mean number of fish species listed as ‘grazers’ in the `eAtlas_fish_groups_status.csv` metadata file | Numeric
+**Corallivores_mean** | Mean number of fish species listed as ‘corallivores’ in the `eAtlas_fish_groups_status.csv` metadata file | Numeric
+**Coraliivores_SE** | Numeric
+**Planktivores_mean** | Mean number of fish species listed as ‘planktivores’ in the `eAtlas_fish_groups_status.csv` metadata file | Numeric
+**Planktivores_SE** | Standard error of the mean number of fish species listed as ‘planktivores’ in the `eAtlas_fish_groups_status.csv` metadata file  | Numeric
+**Territorial Pomacentrids_mean** | Mean number of fish species listed as ‘territorial pomacentrids’ in the `eAtlas_fish_groups_status.csv` metadata file | Numeric
+**Territorial Pomacentrids_SE** | Numeric
+**Plectropomus spp_mean** | Mean number of observed fish species in the genus ***Plectropomus*** (i.e., coral groupers; all species of coral groupers observed are listed in the `eAtlas_fish_groups_status.csv` metadata file) | Numeric
+**Plectropomus spp_SE** | Standard error of the mean number of observed fish species in the genus ***Plectropomus*** | Numeric
+**SCI_mean** | Mean structural complexity index at each site. Individual SCI values range from 1 to 25, with values closer to 1 indicating less structural complexity and values closer to 25 indicating more structural complexity. Each SCI estimate was calculated by multiplying visual estimates of reef slope angle (1-5) by reef slope rugosity (1-5). These values were estimated for each 10m section of each 50m transect for a total of 5 estimates per transect. With 5 transects deployed per site, a total of 25 SCI values were estimated per site. These 25 values were averaged to obtain the mean SCI. | Numeric
+**SCI_SE** | Standard error of the mean SCI at each site | Numeric
+**LCC_mean** | Mean live hard and soft coral % cover | Numeric
+**LCC_SE** | Srandard error of the mean live hard and soft coral % cover | Numeric
+**LHC_mean** | Mean live hard coral % cover | Numeric
+**LHC_SE** | Standard error of the mean live hard coral % cover | Numeric
+**MAC_mean** | Mean macroalgae % cover (includes only fleshy algae, not turf algae) | Numeric
+**MAC_SE** | Standard error of the mean macroalgae % cover | Numeric
 
-**Site**: The ID of the site (where five transect surveys were conducted) within the specified zone, region, and year.
+`eAtlas_fish_benthos_GBR_sites_raw.csv` contains the following additional column:
 
-**No. Transect**: The number of transects deployed in the specified zone, region, and year.
+Dataset Column | Description | Class
+---------------| ----------- | -----
+**Site** | The ID of the site (where five transect surveys were conducted) within the specified zone, region, and year | Factor
+
+`eAtlas_fish_benthos_GBR_zones_raw.csv` contains the following additional column:
+
+Dataset Column | Description | Class
+---------------| ----------- | -----
+**No. Transect** | The number of transects deployed in the specified zone, region, and year | Integer
 
 ## Scripts and code
 
