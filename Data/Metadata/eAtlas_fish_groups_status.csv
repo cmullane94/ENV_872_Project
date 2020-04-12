@@ -1,0 +1,324 @@
+﻿Family,Species,Functional Group,Functional group detail,Fishery Status
+Acanthuridae,Acanthurus albipectoralis,Planktivore,Planktivore,Non-target
+,Acanthurus auranticavus,Detritivore,Detritivore,Non-target
+,Acanthurus blochii,Grazer,Detritivore,Non-target
+,Acanthurus dussumieri,Grazer,Detritivore,Non-target
+,Acanthurus grammoptilus,Grazer,Detritivore,Non-target
+,Acanthurus lineatus,Grazer,Algal cropper,Non-target
+,Acanthurus mata,Planktivore,Planktivore,Non-target
+,Acanthurus nigricans,Grazer,Algal cropper,Non-target
+,Acanthurus nigricauda,Grazer,Detritivore,Non-target
+,Acanthurus nigrofuscus,Grazer,Algal cropper,Non-target
+,Acanthurus nigroris,Grazer,Detritivore,Non-target
+,Acanthurus olivaceus,Grazer,Detritivore,Non-target
+,Acanthurus pyroferus,Grazer,Algal cropper,Non-target
+,Acanthurus thompsoni,Planktivore,Planktivore,Non-target
+,Acanthurus triostegus,Grazer,Algal cropper,Non-target
+,Acanthurus xanthopterus,Grazer,Detritivore,Non-target
+,Ctenochaetus binotatus,Grazer,Detritivore,Non-target
+,Ctenochaetus striatus,Grazer,Detritivore,Non-target
+,Naso annulatus,Grazer,Algal cropper,Non-target
+,Naso brevirostris,Planktivore,Planktivore,Non-target
+,Naso lituratus,Grazer,Algal cropper,Non-target
+,Naso tonganus,Grazer,Algal cropper,Non-target
+,Naso unicornis,Grazer,Algal cropper,Non-target
+,Naso vlamingii,Planktivore,Planktivore,Non-target
+,Paracanthurus hepatus,Planktivore,Planktivore,Non-target
+,Prionurus microlepidotus,Grazer,Algal cropper,Non-target
+,Zebrasoma scopas,Grazer,Algal cropper,Non-target
+,Zebrasoma veliferum,Grazer,Algal cropper,Non-target
+,,,,
+Chaetodontidae,Chaetodon aureofasciatus,Corallivore,Obligate corallivore,Non-target
+,Chaetodon auriga,Corallivore,Facultative corallivore,Non-target
+,Chaetodon baronessa,Corallivore,Obligate corallivore,Non-target
+,Chaetodon bennetti,Corallivore,Obligate corallivore,Non-target
+,Chaetodon citrinellus,Corallivore,Facultative corallivore,Non-target
+,Chaetodon ephippium,Corallivore,Facultative corallivore,Non-target
+,Chaetodon flavirostris,Corallivore,Facultative corallivore,Non-target
+,Chaetodon kleinii,Corallivore,Facultative corallivore,Non-target
+,Chaetodon lineolatus,Corallivore,Facultative corallivore,Non-target
+,Chaetodon lunula,Corallivore,Facultative corallivore,Non-target
+,Chaetodon lunulatus,Benthic carnivore,Benthic carnivore,Non-target
+,Chaetodon melannotus,Benthic carnivore,Benthic carnivore,Non-target
+,Chaetodon mertensii,Benthic carnivore,Benthic carnivore,Non-target
+,Chaetodon meyeri,Corallivore,Facultative corallivore,Non-target
+,Chaetodon ornatissimus,Corallivore,Obligate corallivore,Non-target
+,Chaetodon pelewensis,Corallivore,Obligate corallivore,Non-target
+,Chaetodon plebeius,Corallivore,Obligate corallivore,Non-target
+,Chaetodon punctatofasciatus,Corallivore,Facultative corallivore,Non-target
+,Chaetodon rafflesi,Corallivore,Facultative corallivore,Non-target
+,Chaetodon rainfordi,Corallivore,Obligate corallivore,Non-target
+,Chaetodon reticulatus,Corallivore,Obligate corallivore,Non-target
+,Chaetodon speculum,Corallivore,Facultative corallivore,Non-target
+,Chaetodon trifascialis,Corallivore,Obligate corallivore,Non-target
+,Chaetodon ulietensis,Benthic carnivore,Benthic carnivore,Non-target
+,Chaetodon unimaculatus,Benthic carnivore,Benthic carnivore,Non-target
+,Chaetodon vagabundus,Corallivore,Facultative corallivore,Non-target
+,Chelmon rostratus,Benthic carnivore,Benthic carnivore,Non-target
+,Coradion altivelis,Benthic carnivore,Benthic carnivore,Non-target
+,Coradion chrysostomus,Benthic carnivore,Benthic carnivore,Non-target
+,Forcipiger flavissimus,Benthic carnivore,Benthic carnivore,Non-target
+,Forcipiger longirostris,Benthic carnivore,Benthic carnivore,Non-target
+,Hemitaurichthys polylepis,Planktivore,Planktivore,Non-target
+,Heniochus acuminatus,Benthic carnivore,Benthic carnivore,Non-target
+,Heniochus monoceros,Benthic carnivore,Benthic carnivore,Non-target
+,Heniochus varius,Benthic carnivore,Benthic carnivore,Non-target
+,Parachaetodon ocellatus,Benthic carnivore,Benthic carnivore,Non-target
+,,,,
+Ephippidae,Platax orbicularis,Benthic carnivore,Benthic carnivore,Non-target
+,Platax teira ,Benthic carnivore,Benthic carnivore,Non-target
+,Platax pinnatus,Benthic carnivore,Benthic carnivore,Non-target
+,Platax teira,Benthic carnivore,Benthic carnivore,Non-target
+,,,,
+Haemulidae,Diagramma pictum,Predator,Large predator,Secondary target
+,Plectorhinchus chaetodontoides,Predator,Large predator,Secondary target
+,Plectorhinchus flavomaculatus,Predator,Large predator,Secondary target
+,Plectorhinchus gibbosus,Predator,Large predator,Secondary target
+,Plectorhinchus lessonii,Predator,Large predator,Secondary target
+,Plectorhinchus unicolor,Predator,Large predator,Secondary target
+,,,,
+Kyphosidae,Kyphosus spp.,Grazer,Algal cropper,Non-target
+,Microcanthus strigatus,Benthic carnivore,Benthic carnivore,Non-target
+,,,,
+Labridae,Anampses geographicus,Benthic carnivore,Benthic carnivore,Non-target
+,Anampses neoguinaicus,Benthic carnivore,Benthic carnivore,Non-target
+,Bodianus axillaris ,Benthic carnivore,Benthic carnivore,Non-target
+,Bodianus loxozonus,Benthic carnivore,Benthic carnivore,Non-target
+,Bodianus mesothorax,Benthic carnivore,Benthic carnivore,Non-target
+,Cheilinus chlorurus,Benthic carnivore,Benthic carnivore,Non-target
+,Cheilinus fasciatus,Benthic carnivore,Benthic carnivore,Non-target
+,Cheilinus trilobatus,Benthic carnivore,Benthic carnivore,Non-target
+,Cheilinus undulatus,Benthic carnivore,Benthic carnivore,Protected 
+,Choerodon anchorago,Benthic carnivore,Benthic carnivore,Secondary target
+,Choerodon cyanodus,Benthic carnivore,Benthic carnivore,Secondary target
+,Choerodon fasciatus,Benthic carnivore,Benthic carnivore,Non-target
+,Choerodon graphicus,Benthic carnivore,Benthic carnivore,Secondary target
+,Choerodon monostigma,Benthic carnivore,Benthic carnivore,Secondary target
+,Choerodon schoenleinii,Benthic carnivore,Benthic carnivore,Secondary target
+,Choerodon vitta,Benthic carnivore,Benthic carnivore,Non-target
+,Coris gaimard,Benthic carnivore,Benthic carnivore,Non-target
+,Epibulus insidiator,Benthic carnivore,Benthic carnivore,Non-target
+,Gomphosus varius,Benthic carnivore,Benthic carnivore,Non-target
+,Halichoeres hortulanus,Benthic carnivore,Benthic carnivore,Non-target
+,Halichoeres melanurus,Benthic carnivore,Benthic carnivore,Non-target
+,Hemigymnus fasciatus,Benthic carnivore,Benthic carnivore,Non-target
+,Hemigymnus melapterus,Benthic carnivore,Benthic carnivore,Non-target
+,Labrichthys unilineatus,Benthic carnivore,Benthic carnivore,Non-target
+,Labroides bicolor,Benthic carnivore,Benthic carnivore,Non-target
+,Labroides dimidiatus,,,Non-target
+,Labropsis australis,Benthic carnivore,Benthic carnivore,Non-target
+,Oxycheilinus diagramma,Benthic carnivore,Benthic carnivore,Non-target
+,Psuedolabrus guentheri,Benthic carnivore,Benthic carnivore,Non-target
+,Stethojulis bandanensis,Benthic carnivore,Benthic carnivore,Non-target
+,Stethojulis strigiventer,Benthic carnivore,Benthic carnivore,Non-target
+,Thalassoma hardwicke ,Benthic carnivore,Benthic carnivore,Non-target
+,Thalassoma jansenii,Benthic carnivore,Benthic carnivore,Non-target
+,Thalassoma lunare,Benthic carnivore,Benthic carnivore,Non-target
+,Thalassoma lutescens,Benthic carnivore,Benthic carnivore,Non-target
+,,,,
+Lethrinidae,Gnathodentex aureolineatus,Predator,Intermediate predator,Non-target
+,Gymnocranius spp.,Predator,Intermediate predator,Secondary target
+,Lethrinus atkinsoni,Predator,Intermediate predator,Secondary target
+,Lethrinus erythracanthus,Predator,Intermediate predator,Secondary target
+,Lethrinus harak,Benthic carnivore,Benthic carnivore,Secondary target
+,Lethrinus laticaudis,Predator,Intermediate predator,Secondary target
+,Lethrinus lentjan,Predator,Intermediate predator,Secondary target
+,Lethrinus miniatus,Predator,Intermediate predator,Secondary target
+,Lethrinus nebulosus,Predator,Intermediate predator,Secondary target
+,Lethrinus obsoletus,Predator,Intermediate predator,Secondary target
+,Lethrinus olivaceus,Predator,Large predator,Secondary target
+,Lethrinus ornatus,Predator,Intermediate predator,Secondary target
+,Lethrinus rubrioperculatus,Predator,Intermediate predator,Secondary target
+,Lethrinus xanthochilus,Predator,Intermediate predator,Secondary target
+,Monotaxis grandoculis,Predator,Intermediate predator,Secondary target
+,,,,
+Lutjanidae,Lutjanus adetii,Predator,Intermediate predator,Secondary target
+,Lutjanus argentimaculatus,Predator,Large predator,Primary target
+,Lutjanus biguttatus,Predator,Intermediate predator,Secondary target
+,Lutjanus bohar,Predator,Large predator,Protected
+,Lutjanus carponotatus,Predator,Intermediate predator,Primary target
+,Lutjanus fulviflamma,Predator,Intermediate predator,Secondary target
+,Lutjanus fulvus,Predator,Intermediate predator,Secondary target
+,Lutjanus gibbus,Predator,Intermediate predator,Protected
+,Lutjanus kasmira,Predator,Intermediate predator,Secondary target
+,Lutjanus lemniscatus,Predator,Intermediate predator,Secondary target
+,Lutjanus lutjanus,Predator,Intermediate predator,Secondary target
+,Lutjanus monostigma,Predator,Large predator,Secondary target
+,Lutjanus quinquelineatus,Predator,Intermediate predator,Secondary target
+,Lutjanus rivulatus,Predator,Intermediate predator,Secondary target
+,Lutjanus russelli,Predator,Intermediate predator,Secondary target
+,Lutjanus sebae,Predator,Intermediate predator,Secondary target
+,Lutjanus semicinctus,Predator,Intermediate predator,Secondary target
+,Lutjanus vitta,Predator,Intermediate predator,Secondary target
+,Symphorus nematophorus,Predator,Large predator,Protected
+,,,,
+Mullidae,Parupeneus barberinus,Benthic carnivore,Benthic carnivore,Non-target
+,Parupeneus bifasciatus,Benthic carnivore,Benthic carnivore,Non-target
+,Parupeneus ciliatus,Benthic carnivore,Benthic carnivore,Non-target
+,Parupeneus indicus,Benthic carnivore,Benthic carnivore,Non-target
+,,,,
+Muraenidae,Echidna nebulosa,Predator,Intermediate predator,Non-target
+,Gymnothorax favagineus,Predator,Intermediate predator,Non-target
+,Gymnothorax javanicus,Predator,Intermediate predator,Non-target
+,Gymnothorax meleagris ,Predator,Intermediate predator,Non-target
+,Gymnothorax undulatus ,Predator,Intermediate predator,Non-target
+,Gymnothorax javanicus,Predator,Intermediate predator,Non-target
+,Gymnothorax meleagris,Predator,Intermediate predator,Non-target
+,,,,
+Nemipteridae,Scolopsis bilineatus,Predator,Intermediate predator,Non-target
+,Scolopsis margaritifer,Predator,Intermediate predator,Non-target
+,Scolopsis monogramma,Predator,Intermediate predator,Non-target
+,,,,
+Pomacanthidae,Centropyge bicolor,Benthic carnivore,Benthic carnivore,Non-target
+,Centropyge bispinosus,Benthic carnivore,Benthic carnivore,Non-target
+,Centropyge nox,Benthic carnivore,Benthic carnivore,Non-target
+,Centropyge tibicen,Benthic carnivore,Benthic carnivore,Non-target
+,Centropyge vrolikii,Benthic carnivore,Benthic carnivore,Non-target
+,Chaetodontoplus douboulayi,Benthic carnivore,Benthic carnivore,Non-target
+,Chaetodontoplus meredithi,Benthic carnivore,Benthic carnivore,Non-target
+,Pomacanthus imperator,Benthic carnivore,Benthic carnivore,Non-target
+,Pomacanthus semicirculatus,Benthic carnivore,Benthic carnivore,Non-target
+,Pomacanthus sexstriatus,Benthic carnivore,Benthic carnivore,Non-target
+,Pomacanthus xanthometapon,Benthic carnivore,Benthic carnivore,Non-target
+,Pygoplites diacanthus,Benthic carnivore,Benthic carnivore,Non-target
+,,,,
+Pomacentridae,Abudefduf bengalensis,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Abudefduf sexfasciatus,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Abudefduf vaigiensis,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Abudefduf whitleyi,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Abudefduf sexfasciatus,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Abudefduf vaigiensis,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Abudefduf whitleyi,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Acanthochromis polyacanthus,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Amblyglyphidodon aureus,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Amblyglyphidodon curacao,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Amblyglyphidodon leucogaster,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Amphiprion akindynos,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Amphiprion chrysopterus,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Amphiprion clarkii,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Amphiprion melanopus,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Amphiprion percula,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Amphiprion perideraion,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Cheiloprion labiatus,Corallivore,Facultative corallivore,Non-target
+,Chromis acares,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis agilis,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis amboinensis,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis atripectoralis,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis atripes,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis chrysura,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis iomelas,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis lepidolepis,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis lineata,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis margaritifer,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis nitida,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis retrofasciatus,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis ternatensis,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis vanderbilti,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis viridis,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis weberi,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chromis xanthura,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chrysiptera biocellata,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Chrysiptera flavipinnis,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chrysiptera rex,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Chrysiptera rollandi,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Chrysiptera talboti,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Dascyllus aruanus,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Dascyllus melanurus,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Dascyllus trimaculatus,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Dascyllus reticulatus,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Dischistodus melanotus,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Dischistodus perspicillatus,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Dischistodus prosopotaenia,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Dischistodus pseudochrysopoecilus,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Hemiglyphidodon plagiometapon,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Neoglyphidodon melas,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Neoglyphidodon nigroris,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Neoglyphidodon polyacanthus,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Neopomacentrus asyzron,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Neopomacantrus bankieri,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Neopomacentrus cyanomos,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Plectroglyphidodon dickii,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Plectroglyphidodon johnstonianus,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Plectroglyphidodon lacrymatus,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Pomacentrus adelus,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Pomacentrus amboinensis,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Pomacentrus australis,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Pomacentrus bankanensis,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Pomacentrus brachialis,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Pomacentrus chrysurus,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Pomacentrus coelestis,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Pomacentrus grammorhynchus,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Pomacentrus lepidogenis,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Pomacentrus moluccensis,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Pomacentrus nagasakiensis,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Pomacentrus pavo,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Pomacentrus philippinus,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Pomacentrus tripunctatus,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Pomacentrus vaiuli,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Pomacentrus wardi,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Pomachromis richardsoni,Planktivorous pomacentrid,Planktivorous pomacentrid,Non-target
+,Premnas biaculeatus,Omnivorous pomacentrid,Omnivorous pomacentrid,Non-target
+,Stegastes apicalis,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Stegastes fasciolatus,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Stegastes gascoynei,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,Stegastes nigricans,Territorial pomacentrid,Territorial pomacentrid,Non-target
+,,,,
+Scaridae,Bolbometapon muricatum,Grazer,Excavating scarid,Non-target
+,Calotomus carolinus,Grazer,Scraping scarid,Non-target
+,Cetoscarus bicolor,Grazer,Excavating scarid,Non-target
+,Chlorurus bleekeri,Grazer,Excavating scarid,Non-target
+,Chlorurus japanensis,Grazer,Excavating scarid,Non-target
+,Chlorurus microrhinus,Grazer,Excavating scarid,Non-target
+,Chlorurus sordidus,Grazer,Excavating scarid,Non-target
+,Hipposcarus longiceps,Grazer,Scraping scarid,Non-target
+,Scarus altipinnis,Grazer,Scraping scarid,Non-target
+,Scarus chamaeleon,Grazer,Scraping scarid,Non-target
+,Scarus dimidiatus,Grazer,Scraping scarid,Non-target
+,Scarus flavipectoralis,Grazer,Scraping scarid,Non-target
+,Scarus forsteni,Grazer,Scraping scarid,Non-target
+,Scarus frenatus,Grazer,Scraping scarid,Non-target
+,Scarus ghobban,Grazer,Scraping scarid,Non-target
+,Scarus globiceps,Grazer,Scraping scarid,Non-target
+,Scarus niger,Grazer,Scraping scarid,Non-target
+,Scarus oviceps,Grazer,Scraping scarid,Non-target
+,Scarus psittacus,Grazer,Scraping scarid,Non-target
+,Scarus rivulatus,Grazer,Scraping scarid,Non-target
+,Scarus rubroviolaceus,Grazer,Scraping scarid,Non-target
+,Scarus schlegeli,Grazer,Scraping scarid,Non-target
+,Scarus spinus,Grazer,Scraping scarid,Non-target
+,Scarus tricolor,Grazer,Scraping scarid,Non-target
+,,,,
+Serranidae,Aethaloperca rogga,Predator,Intermediate predator,Secondary target
+,Anyperodon leucogrammicus,Predator,Large predator,Secondary target
+,Cephalopholis boenak,Predator,Intermediate predator,Non-target
+,Cephalopholis cyanostigma,Predator,Intermediate predator,Secondary target
+,Cephalopholis microprion,Predator,Intermediate predator,Non-target
+,Cromileptes altivelis,Predator,Large predator,Protected
+,Diploprion bifasciatus,Predator,Intermediate predator,Non-target
+,Epinephelus caerulopunctatus,Predator,Large predator,Secondary target
+,Epinephelus fasciatus,Predator,Intermediate predator,Secondary target
+,Epinephelus fuscoguttatus,Predator,Large predator,Secondary target
+,Epinephelus lanceolatus,Predator,Large predator,Protected
+,Epinephelus merra,Predator,Intermediate predator,Secondary target
+,Epinephelus ongus,Predator,Intermediate predator,Secondary target
+,Epinephelus quoyanus,Predator,Intermediate predator,Secondary target
+,Plectropomus areolatus,Predator,Large predator,Primary target
+,Plectropomus laevis,Predator,Large predator,Primary target
+,Plectropomus leopardus,Predator,Large predator,Primary target
+,Plectropomus maculatus,Predator,Large predator,Primary target
+,Variola albimarginata,Predator,Large predator,Secondary target
+,Variola louti,Predator,Large predator,Secondary target
+,,,,
+Siganidae,Siganus argenteus,Grazer,Algal cropper,Non-target
+,Siganus corallinus,Grazer,Algal cropper,Non-target
+,Siganus doliatus,Grazer,Algal cropper,Non-target
+,Siganus fuscescens,Grazer,Algal cropper,Non-target
+,Siganus javus,Grazer,Algal cropper,Non-target
+,Siganus lineatus,Grazer,Algal cropper,Non-target
+,Siganus puellus,Grazer,Algal cropper,Non-target
+,Siganus punctatissimus,Grazer,Algal cropper,Non-target
+,Siganus punctatus,Grazer,Algal cropper,Non-target
+,Siganus spinus,Grazer,Algal cropper,Non-target
+,Siganus vulpinus,Grazer,Algal cropper,Non-target
+,,,,
+Zanclidae,Zanclus cornutus,Benthic carnivore,Benthic carnivore,Non-target

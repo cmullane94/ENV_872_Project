@@ -65,32 +65,44 @@ Files in the data folder are named according to the following convention: `datab
 
 <For each data file in the repository, describe the data contained in each column. Include the column name, a description of the information, the class of data, and any units associated with the data. Create a list or table for each data file.> 
 
-Both `eAtlas_fish_benthos_GBR_sites_raw.csv` and `eAtlas_fish_benthos_GBR_zones_raw.csv` contain the follwoing columns: 
+The class of data?
+
+Both `eAtlas_fish_benthos_GBR_sites_raw.csv` and `eAtlas_fish_benthos_GBR_zones_raw.csv` contain the following columns: 
 
 - SE - Standard Error
 - mean - Mean over the transects at a site.
-- Total Fish Densit_mean (TFishDenMn)
-- Total Fish Densit_SE (TFishDenSE)
-- Fish Species richness_mean (FishRichMn)
-- Fish Species richness_SE (FishRichSE)
-- Fishery Target Spp_mean (FishTargMn) - Pooled group of fish species designated as 'Primary target’ in the species list file.
-- Fishery Target Spp_SE (FishTargSE)
-- Grazers_mean (GrazersMn) - Pooled group of fish species listed as ‘grazers’ in the species list
-- Grazers_SE (GrazersSE)
-- Corallivores_mean (CorallivMn)
-- Coraliivores_SE (CorallivSE)
-- Planktivores_mean (PlanktivMn)
-- Planktivores_SE (PlanktivSE)
-- Territorial Pomacentrids_mean (TerrPomaMn)
-- Territorial Pomacentrids_SE (TerrPomaSE)
-- Plectropomus spp_mean (PlectSppMn)
-- Plectropomus spp_SE (PlectSppSE)
-- SCI_mean - Structural complexity Index.. An index (1-25) calculated by multiplying our visual estimates of reef slope angle (1-5) by reef slope rugosity (Complexity 1-5). These values are estimated for each 10m section of each 50m transect. 5 transects per site = 25 SCI estimates per site. The e-atlas data we have provided is site means… i.e.. the mean of those 25 values.
-- LCC - Live coral cover (percent cover), live hard and soft coral pooled.
-- LHC - Live hard coral cover (%), live hard coral only.
-- MAC - Macro Algae Cover % (fleshy algas only, does not include turf algae)
-- Fish Line_SUM - is the pooled number of lines recorded on the 5 transects surveyed at each site. = total number of lines/1500m2.
-- Line Accumulation Rate - number of lines accumulated per month.
+
+Dataset Column | Description | Class
+---------------| ----------- | -----
+**Year** | Year of data collection |
+**Region** | The island group (Palm, Magnetic, Whitsunday or Keppel) of the coral reef that was surveyed |
+**Zone** | Indicates if data were collected in a no-take zone established in 1987 (NTR 1987), a no-take zone established in 2004 (NTR 2004), or a zone where fishing is allowed (Fished) |
+**Total Fish Densit_mean** | Mean number of fish observed per 1000 m^2^ at the specified site |
+**Total Fish Densit_SE** | The standard error of the mean number of fish observed per 1000 m^2^ at the specified site |
+**Fish Species richness_mean** | The mean number of fish species observed at the specified site |
+**Fish Species richness_SE** | The standard error of the mean number of fish species observed at the specified site |
+**Fishery Target Spp_mean** |  Mean number of fish species designated as 'Primary target’ in the `eAtlas_fish_groups_status.csv` metadata file |
+**Fishery Target Spp_SE** | The standard error of the mean number of fish species designated as 'Primary target’ in the `eAtlas_fish_groups_status.csv` metadata file |
+**Grazers_mean** | Mean number of fish species listed as ‘grazers’ in the `eAtlas_fish_groups_status.csv` metadata file |
+**Grazers_SE**|
+**Corallivores_mean** |
+**Coraliivores_SE** |
+**Planktivores_mean** |
+**Planktivores_SE** |
+**Territorial Pomacentrids_mean** |
+**Territorial Pomacentrids_SE** |
+**Plectropomus spp_mean** |
+**Plectropomus spp_SE** |
+**SCI_mean** | Structural complexity Index.. An index (1-25) calculated by multiplying our visual estimates of reef slope angle (1-5) by reef slope rugosity (Complexity 1-5). These values are estimated for each 10m section of each 50m transect. 5 transects per site = 25 SCI estimates per site. The e-atlas data we have provided is site means… i.e.. the mean of those 25 values.
+**LCC** | Live coral cover (percent cover), live hard and soft coral pooled.
+**LHC** | Live hard coral cover (%), live hard coral only.
+**MAC** | Macro Algae Cover % (fleshy algas only, does not include turf algae)
+**Fish Line_SUM** | is the pooled number of lines recorded on the 5 transects surveyed at each site. = total number of lines/1500m2.
+**Line Accumulation Rate** | number of lines accumulated per month.
+
+**Site**: The ID of the site (where five transect surveys were conducted) within the specified zone, region, and year.
+
+**No. Transect**: The number of transects deployed in the specified zone, region, and year.
 
 ## Scripts and code
 
