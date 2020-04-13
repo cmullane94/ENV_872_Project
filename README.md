@@ -1,25 +1,16 @@
 # ENV_872_Project
 
-<General notes: add as much information as is relevant for your repository. Some overarching guidelines are provided, but feel free to expand on these guidelines.>
-<More resources found here: https://www.dataone.org/all-best-practices>
-<Delete the text inside the brackets when formatting your file.>
-
 ## Summary
 
-This repository was prepared to hold raw and processed data, visualizations, code, and other output for Duke University's Environmental Data Analytics (ENV 872) Spring 2020 final project.
-
-<describe the purpose of this repository, the information it contains, and any relevant analysis goals. What, why, where, when, how?>
+This repository was prepared to hold data, code, and other output for Duke University's Environmental Data Analytics (ENV 872) Spring 2020 final project. The analysis for this project will focus on the fish species and benthos of Australia's Great Barrier Reef. 
 
 ## Investigators
 
-This repository was created and assembled by Claire Mullaney, a Duke University Master of Environmental Management student (claire.mullaney@duke.edu).
-
-<name(s), affiliation(s), contact information, roles (if applicable)>
+This repository was created and assembled by Claire Mullaney, a Duke University Master of Environmental Management student (claire.mullaney@duke.edu). 
 
 ## Keywords
 
-Coral reefs, 
-<add relevant keywords here>
+Great Barrier Reef, coral reefs, fish, benthos, complexity, coral cover, marine science
 
 ## Database Information
 Data were originally collected by the ARC Centre of Excellence for Coral Reef Studies at James Cook University and were hosted at the eAtlas data repository (http://eatlas.org.au/pydio/data/public/833ece.php). They were accessed via the Australian Government's database at: https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69
@@ -63,12 +54,7 @@ Files in the data folder are named according to the following convention: `datab
 
 ## Metadata
 
-<For each data file in the repository, describe the data contained in each column. Include the column name, a description of the information, the class of data, and any units associated with the data. Create a list or table for each data file.> 
-
 Both `eAtlas_fish_benthos_GBR_sites_raw.csv` and `eAtlas_fish_benthos_GBR_zones_raw.csv` contain the following columns: 
-
-- SE - Standard Error
-- mean - Mean over the transects at a site.
 
 Dataset Column | Description | Class
 ---------------| ----------- | -----
@@ -114,9 +100,14 @@ Dataset Column | Description | Class
 
 ## Scripts and code
 
+Data exploration and wrangling
+Final .rmd file
+
 <list any software scripts/code contained in the repository and a description of their purpose.>
 
 ## Quality assurance/quality control
+
+Pushing regularly
 
 <describe any relevant QA/QC procedures taken with your data. Some ideas can be found here:>
 <https://www.dataone.org/best-practices/develop-quality-assurance-and-quality-control-plan>
