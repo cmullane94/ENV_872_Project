@@ -16,7 +16,7 @@ Data files were hosted in the eAtlas data repository: http://eatlas.org.au/pydio
 More information on data.gov.au can be found here: https://search.data.gov.au/page/about
 More information on eAtlas can be found here: https://eatlas.org.au/content/about-e-atlas
 
-From the downloaded dataset, `E-Atlas Data_NERP 8.2_Dec 2014_fish_benthos.xlsx` was placed in the reposity for analysis inside the Data/Raw folder. This file had two sheets; the first was saved as `data.gov.au_fish_benthos_GBR_sites_raw.csv` and the second was saved as `data.gov.au_fish_benthos_GBR_zones_raw.csv`.
+From the downloaded dataset, `E-Atlas Data_NERP 8.2_Dec 2014_fish_benthos.xlsx` was placed in the repository for analysis inside the Data/Raw folder. This file had two sheets; the first was saved as `data.gov.au_fish_benthos_GBR_sites_raw.csv` and the second was saved as `data.gov.au_fish_benthos_GBR_zones_raw.csv`.
 
 `E-Atlas Data_NERP 8.2_Site Coordinates.xlsx` was saved in the Data/Metadata folder as `data.gov.au_site_coordinates.csv`.
 
@@ -33,7 +33,7 @@ Folders contained in the repository include:
 Folder/Pathway | Description | File Format(s)
 ---------------| ----------- | -----------
 **Code** | R scripts created to explore, wrangle, and analyze data | .r
-**Data/Raw** | Data files in their orginal formatting | .csv
+**Data/Raw** | Data files in their original formatting | .csv
 **Data/Processed** | Revised data files created by wrangling raw data files | .csv
 **Data/Metadata** | Files giving additional information about raw data | .csv, .pdf
 **Output** | R Markdown files and PDFs that will be used as final products | .rmd, .pdf
@@ -74,7 +74,7 @@ Dataset Column | Description | Class
 **Grazers_mean** | Mean number of fish species listed as ‘grazers’ in the `data.gov.au_fish_groups_status.csv` metadata file | Numeric
 **Grazers_SE** | Standard error of the mean number of fish species listed as ‘grazers’ in the `data.gov.au_fish_groups_status.csv` metadata file | Numeric
 **Corallivores_mean** | Mean number of fish species listed as ‘corallivores’ in the `data.gov.au_fish_groups_status.csv` metadata file | Numeric
-**Coraliivores_SE** | Numeric
+**Corallivores_SE** | Numeric
 **Planktivores_mean** | Mean number of fish species listed as ‘planktivores’ in the `data.gov.au_fish_groups_status.csv` metadata file | Numeric
 **Planktivores_SE** | Standard error of the mean number of fish species listed as ‘planktivores’ in the `data.gov.au_fish_groups_status.csv` metadata file  | Numeric
 **Territorial Pomacentrids_mean** | Mean number of fish species listed as ‘territorial pomacentrids’ in the `data.gov.au_fish_groups_status.csv` metadata file | Numeric
@@ -84,7 +84,7 @@ Dataset Column | Description | Class
 **SCI_mean** | Mean structural complexity index at each site. Individual SCI values range from 1 to 25, with values closer to 1 indicating less structural complexity and values closer to 25 indicating more structural complexity. Each SCI estimate was calculated by multiplying visual estimates of reef slope angle (1-5) by reef slope rugosity (1-5). These values were estimated for each 10m section of each 50m transect for a total of 5 estimates per transect. With 5 transects deployed per site, a total of 25 SCI values were estimated per site. These 25 values were averaged to obtain the mean SCI. | Numeric
 **SCI_SE** | Standard error of the mean SCI at each site | Numeric
 **LCC_mean** | Mean live hard and soft coral % cover | Numeric
-**LCC_SE** | Srandard error of the mean live hard and soft coral % cover | Numeric
+**LCC_SE** | Standard error of the mean live hard and soft coral % cover | Numeric
 **LHC_mean** | Mean live hard coral % cover | Numeric
 **LHC_SE** | Standard error of the mean live hard coral % cover | Numeric
 **MAC_mean** | Mean macroalgae % cover (includes only fleshy algae, not turf algae) | Numeric
