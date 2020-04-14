@@ -18,13 +18,13 @@ More information on data.gov.au can be found here: https://search.data.gov.au/pa
 
 More information on eAtlas can be found here: https://eatlas.org.au/content/about-e-atlas
 
-From the downloaded dataset, `E-Atlas Data_NERP 8.2_Dec 2014_fish_benthos.xlsx` was placed in the repository for analysis inside the Data/Raw folder. This file had two sheets; the first was saved as `data.gov.au_fish_benthos_GBR_sites_raw.csv` and the second was saved as `data.gov.au_fish_benthos_GBR_zones_raw.csv`.
+From the downloaded dataset, `E-Atlas Data_NERP 8.2_Dec 2014_fish_benthos.xlsx` was placed in the repository for analysis inside the `Data/Raw` folder. This file had two sheets; the first was saved as `data.gov.au_fish_benthos_GBR_sites_raw.csv` and the second was saved as `data.gov.au_fish_benthos_GBR_zones_raw.csv`.
 
-`E-Atlas Data_NERP 8.2_Site Coordinates.xlsx` was saved in the Data/Metadata folder as `data.gov.au_site_coordinates.csv`.
+`E-Atlas Data_NERP 8.2_Site Coordinates.xlsx` was saved in the `Data/Metadata` folder as `data.gov.au_site_coordinates.csv`.
 
-`Fish Species List_GBR Monitoring_Functional groups & fishery status_2014.xlsx` was saved in the Data/Metadata folder as `data.gov.au_fish_groups_status.csv`.
+`Fish Species List_GBR Monitoring_Functional groups & fishery status_2014.xlsx` was saved in the `Data/Metadata` folder as `data.gov.au_fish_groups_status.csv`.
 
-`e-Atlas-dataset-report-form_NERP 8.2 Dec 2014_fish_benthos.docx` was saved in the Data/Metadata folder as `data.gov.au_fish_benthos_dataset_info.pdf`.
+`e-Atlas-dataset-report-form_NERP 8.2 Dec 2014_fish_benthos.docx` was saved in the `Data/Metadata` folder as `data.gov.au_fish_benthos_dataset_info.pdf`.
 
 Data were accessed 2020-04-10.
 
@@ -42,7 +42,7 @@ Folder/Pathway | Description | File Format(s)
 
 ***
 
-Files in the data folder are named according to the following convention: `database_description_details_stage.format`.
+Files in the `Data` folder are named according to the following convention: `database_description_details_stage.format`.
 
 **database** is the database from which the data were obtained
 
@@ -107,18 +107,18 @@ Dataset Column | Description | Class
 
 Information on dataset and collection methods obtained from: https://data.gov.au/data/dataset/benthic-cover-and-fish-density-on-fringing-reefs-of-inshore-island-groups-of-the-gbr-1999-2014-1
 
-This information is also available within the `data.gov.au_fish_benthos_dataset_info.pdf` file in the Data/Metadata folder.
+This information is also available within the `data.gov.au_fish_benthos_dataset_info.pdf` file in the `Data/Metadata` folder.
 
 ## Scripts and code
 
-Scripts used to explore, wrangle, and analyze data will be saved as .r files and placed in the **Code** folder.
+Scripts used to explore, wrangle, and analyze data will be saved as .r files and placed in the `Code` folder.
 
-Finalized and polished code will be saved as .rmd files in the **Output** folder.
+Finalized and polished code will be saved as .rmd files in the `Output` folder.
 
 ## Quality assurance/quality control
 
-All analysis steps and changes made to datasets, along with any significant errors, outliers, and problems that are encountered, will be documented in scripts (.r files) in the Code folder. 
+All analysis steps and changes made to datasets, along with any significant errors, outliers, and problems that are encountered, will be documented in scripts (.r files) in the `Code` folder. 
 
-All processed datasets will be named according to the naming conventions outlined above and saved in the Data/Processed folder. 
+All processed datasets will be named according to the naming conventions outlined above and saved in the `Data/Processed` folder. 
 
 Modifications to repository materials will be pushed to GitHub regularly to ensure a current backup is maintained.

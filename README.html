@@ -381,12 +381,14 @@ summary {
 </div>
 <div id="database-information" class="section level2">
 <h2>Database Information</h2>
-<p>Data were collected by by the ARC Centre of Excellence for Coral Reef Studies at James Cook University. They were accessed via the Australian government’s database for open government data: <a href="https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69" class="uri">https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69</a> Data files were hosted in the eAtlas data repository: <a href="http://eatlas.org.au/pydio/data/public/833ece.php" class="uri">http://eatlas.org.au/pydio/data/public/833ece.php</a></p>
-<p>More information on the Australian government’s database can be found here: <a href="https://search.data.gov.au/page/about" class="uri">https://search.data.gov.au/page/about</a> More information on eAtlas can be found here: <a href="https://eatlas.org.au/content/about-e-atlas" class="uri">https://eatlas.org.au/content/about-e-atlas</a></p>
-<p>From the downloaded dataset, <code>E-Atlas Data_NERP 8.2_Dec 2014_fish_benthos.xlsx</code> was placed in the reposity for analysis inside the Data/Raw folder. This file had two sheets; the first was saved as <code>eAtlas_fish_benthos_GBR_sites_raw.csv</code> and the second was saved as <code>eAtlas_fish_benthos_GBR_zones_raw.csv</code>.</p>
-<p><code>E-Atlas Data_NERP 8.2_Site Coordinates.xlsx</code> was saved in the Data/Metadata folder as <code>eAtlas_site_coordinates.csv</code>.</p>
-<p><code>Fish Species List_GBR Monitoring_Functional groups &amp; fishery status_2014.xlsx</code> was saved in the Data/Metadata folder as <code>eAtlas_fish_groups_status.csv</code>.</p>
-<p><code>e-Atlas-dataset-report-form_NERP 8.2 Dec 2014_fish_benthos.docx</code> was saved in the Data/Metadata folder as <code>eAtlas_fish_benthos_dataset_info.pdf</code>.</p>
+<p>Data were collected by by the ARC Centre of Excellence for Coral Reef Studies at James Cook University. They were accessed via the Australian government’s database for open government data, data.gov.au: <a href="https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69" class="uri">https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69</a></p>
+<p>Data files were hosted in the eAtlas data repository: <a href="http://eatlas.org.au/pydio/data/public/833ece.php" class="uri">http://eatlas.org.au/pydio/data/public/833ece.php</a></p>
+<p>More information on data.gov.au can be found here: <a href="https://search.data.gov.au/page/about" class="uri">https://search.data.gov.au/page/about</a></p>
+<p>More information on eAtlas can be found here: <a href="https://eatlas.org.au/content/about-e-atlas" class="uri">https://eatlas.org.au/content/about-e-atlas</a></p>
+<p>From the downloaded dataset, <code>E-Atlas Data_NERP 8.2_Dec 2014_fish_benthos.xlsx</code> was placed in the repository for analysis inside the Data/Raw folder. This file had two sheets; the first was saved as <code>data.gov.au_fish_benthos_GBR_sites_raw.csv</code> and the second was saved as <code>data.gov.au_fish_benthos_GBR_zones_raw.csv</code>.</p>
+<p><code>E-Atlas Data_NERP 8.2_Site Coordinates.xlsx</code> was saved in the Data/Metadata folder as <code>data.gov.au_site_coordinates.csv</code>.</p>
+<p><code>Fish Species List_GBR Monitoring_Functional groups &amp; fishery status_2014.xlsx</code> was saved in the Data/Metadata folder as <code>data.gov.au_fish_groups_status.csv</code>.</p>
+<p><code>e-Atlas-dataset-report-form_NERP 8.2 Dec 2014_fish_benthos.docx</code> was saved in the Data/Metadata folder as <code>data.gov.au_fish_benthos_dataset_info.pdf</code>.</p>
 <p>Data were accessed 2020-04-10.</p>
 </div>
 <div id="folder-structure-file-formats-and-naming-conventions" class="section level2">
@@ -413,7 +415,7 @@ summary {
 </tr>
 <tr class="even">
 <td><strong>Data/Raw</strong></td>
-<td>Data files in their orginal formatting</td>
+<td>Data files in their original formatting</td>
 <td>.csv</td>
 </tr>
 <tr class="odd">
@@ -443,9 +445,9 @@ summary {
 </div>
 <div id="metadata" class="section level2">
 <h2>Metadata</h2>
-<p>These data, which were collected between 1999 and 2014 on the inshore coral reefs of the Great Barrier Reef Marine Park, contain the average percent cover of major benthic categories as well as the average density of fish functional groups. <code>eAtlas_fish_benthos_GBR_sites_raw.csv</code> gives these data averaged for each site while <code>eAtlas_fish_benthos_GBR_zones_raw.csv</code> gives them averaged for each zone (see table below for a description of the site and zone variables).</p>
+<p>These data, which were collected between 1999 and 2014 on the inshore coral reefs of the Great Barrier Reef Marine Park, contain the average percent cover of major benthic categories as well as the average density of fish functional groups. <code>data.gov.au_fish_benthos_GBR_sites_raw.csv</code> gives these data averaged for each site while <code>data.gov.au_fish_benthos_GBR_zones_raw.csv</code> gives them averaged for each zone (see table below for a description of the site and zone variables).</p>
 <p>Underwater visual census (UVC) methodology was used to survey these fish and benthic communities. Within each site, UVC surveys were conducted using 5 replicate transects (each 50m x 6m) deployed on the reef slope between approximately 4 and 12 meters. To enable the assessment of the effects of a rezoning plan that was implemented in 2004, there are even numbers of sites located in zones where fishing is allowed, zones that were closed to fishing in 1987, and zones that were closed to fishing in 2004.</p>
-<p>Both <code>eAtlas_fish_benthos_GBR_sites_raw.csv</code> and <code>eAtlas_fish_benthos_GBR_zones_raw.csv</code> contain the following columns:</p>
+<p>Both <code>data.gov.au_fish_benthos_GBR_sites_raw.csv</code> and <code>data.gov.au_fish_benthos_GBR_zones_raw.csv</code> contain the following columns:</p>
 <table>
 <colgroup>
 <col width="48%"></col>
@@ -497,47 +499,47 @@ summary {
 </tr>
 <tr class="even">
 <td><strong>Fishery Target Spp_mean</strong></td>
-<td>Mean number of fish species designated as ‘Primary target’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Mean number of fish species designated as ‘Primary target’ in the <code>data.gov.au_fish_groups_status.csv</code> metadata file</td>
 <td>Numeric</td>
 </tr>
 <tr class="odd">
 <td><strong>Fishery Target Spp_SE</strong></td>
-<td>Standard error of the mean number of fish species designated as ‘Primary target’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Standard error of the mean number of fish species designated as ‘Primary target’ in the <code>data.gov.au_fish_groups_status.csv</code> metadata file</td>
 <td>Numeric</td>
 </tr>
 <tr class="even">
 <td><strong>Grazers_mean</strong></td>
-<td>Mean number of fish species listed as ‘grazers’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Mean number of fish species listed as ‘grazers’ in the <code>data.gov.au_fish_groups_status.csv</code> metadata file</td>
 <td>Numeric</td>
 </tr>
 <tr class="odd">
 <td><strong>Grazers_SE</strong></td>
-<td>Standard error of the mean number of fish species listed as ‘grazers’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Standard error of the mean number of fish species listed as ‘grazers’ in the <code>data.gov.au_fish_groups_status.csv</code> metadata file</td>
 <td>Numeric</td>
 </tr>
 <tr class="even">
 <td><strong>Corallivores_mean</strong></td>
-<td>Mean number of fish species listed as ‘corallivores’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Mean number of fish species listed as ‘corallivores’ in the <code>data.gov.au_fish_groups_status.csv</code> metadata file</td>
 <td>Numeric</td>
 </tr>
 <tr class="odd">
-<td><strong>Coraliivores_SE</strong></td>
+<td><strong>Corallivores_SE</strong></td>
 <td>Numeric</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><strong>Planktivores_mean</strong></td>
-<td>Mean number of fish species listed as ‘planktivores’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Mean number of fish species listed as ‘planktivores’ in the <code>data.gov.au_fish_groups_status.csv</code> metadata file</td>
 <td>Numeric</td>
 </tr>
 <tr class="odd">
 <td><strong>Planktivores_SE</strong></td>
-<td>Standard error of the mean number of fish species listed as ‘planktivores’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Standard error of the mean number of fish species listed as ‘planktivores’ in the <code>data.gov.au_fish_groups_status.csv</code> metadata file</td>
 <td>Numeric</td>
 </tr>
 <tr class="even">
 <td><strong>Territorial Pomacentrids_mean</strong></td>
-<td>Mean number of fish species listed as ‘territorial pomacentrids’ in the <code>eAtlas_fish_groups_status.csv</code> metadata file</td>
+<td>Mean number of fish species listed as ‘territorial pomacentrids’ in the <code>data.gov.au_fish_groups_status.csv</code> metadata file</td>
 <td>Numeric</td>
 </tr>
 <tr class="odd">
@@ -547,7 +549,7 @@ summary {
 </tr>
 <tr class="even">
 <td><strong>Plectropomus spp_mean</strong></td>
-<td>Mean number of observed fish species in the genus <strong><em>Plectropomus</em></strong> (i.e., coral groupers; all species of coral groupers observed are listed in the <code>eAtlas_fish_groups_status.csv</code> metadata file)</td>
+<td>Mean number of observed fish species in the genus <strong><em>Plectropomus</em></strong> (i.e., coral groupers; all species of coral groupers observed are listed in the <code>data.gov.au_fish_groups_status.csv</code> metadata file)</td>
 <td>Numeric</td>
 </tr>
 <tr class="odd">
@@ -572,7 +574,7 @@ summary {
 </tr>
 <tr class="odd">
 <td><strong>LCC_SE</strong></td>
-<td>Srandard error of the mean live hard and soft coral % cover</td>
+<td>Standard error of the mean live hard and soft coral % cover</td>
 <td>Numeric</td>
 </tr>
 <tr class="even">
@@ -597,7 +599,7 @@ summary {
 </tr>
 </tbody>
 </table>
-<p><code>eAtlas_fish_benthos_GBR_sites_raw.csv</code> contains the following additional column:</p>
+<p><code>data.gov.au_fish_benthos_GBR_sites_raw.csv</code> contains the following additional column:</p>
 <table>
 <colgroup>
 <col width="48%"></col>
@@ -619,7 +621,7 @@ summary {
 </tr>
 </tbody>
 </table>
-<p><code>eAtlas_fish_benthos_GBR_zones_raw.csv</code> contains the following additional column:</p>
+<p><code>data.gov.au_fish_benthos_GBR_zones_raw.csv</code> contains the following additional column:</p>
 <table>
 <colgroup>
 <col width="48%"></col>
@@ -642,7 +644,7 @@ summary {
 </tbody>
 </table>
 <p>Information on dataset and collection methods obtained from: <a href="https://data.gov.au/data/dataset/benthic-cover-and-fish-density-on-fringing-reefs-of-inshore-island-groups-of-the-gbr-1999-2014-1" class="uri">https://data.gov.au/data/dataset/benthic-cover-and-fish-density-on-fringing-reefs-of-inshore-island-groups-of-the-gbr-1999-2014-1</a></p>
-<p>This information is also available within the <code>eAtlas_fish_benthos_dataset_info.pdf</code> file in the Data/Metadata folder.</p>
+<p>This information is also available within the <code>data.gov.au_fish_benthos_dataset_info.pdf</code> file in the Data/Metadata folder.</p>
 </div>
 <div id="scripts-and-code" class="section level2">
 <h2>Scripts and code</h2>
