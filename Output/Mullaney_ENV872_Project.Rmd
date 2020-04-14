@@ -36,7 +36,6 @@ GBR_Zones <- read.csv("./Data/Raw/eAtlas_fish_benthos_GBR_zones_raw.csv")
 
 ```
 
-
 # Rationale and Research Questions
 
 
