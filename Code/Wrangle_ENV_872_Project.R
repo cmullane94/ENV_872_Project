@@ -15,13 +15,13 @@ colnames (GBR_Sites)
 #and omitting NAs
 GBR_Sites_Processed_2004 <- GBR_Sites %>%
   select(Year:Site, Total.Fish.Densit_mean, Fish.Species.richness_mean, 
-         Grazers_mean, Corallivores_mean, SCI_mean:MAC_mean) %>%
+         Grazers_mean, Corallivores_mean, SCI_mean, LCC_mean, LHC_mean, MAC_mean) %>%
   filter(LCC_mean <= 100 & LHC_mean <= 100) %>%
   na.omit()
 
 GBR_Sites_Processed_1999 <- GBR_Sites %>%
   select(Year:Site, Total.Fish.Densit_mean, Fish.Species.richness_mean, 
-         Grazers_mean, Corallivores_mean, SCI_mean:MAC_mean) %>%
+         Grazers_mean, Corallivores_mean, SCI_mean, LCC_mean, LHC_mean, MAC_mean) %>%
   filter(LCC_mean <= 100 & LHC_mean <= 100)
 
 #Saving processed datasets
