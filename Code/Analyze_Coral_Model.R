@@ -6,7 +6,6 @@ library(tidyverse)
 library(GGally)
 library(nlme)
 library(lmtest)
-require(ggiraphExtra)
 
 # Setting ggplot theme
 deftheme <- theme_classic(base_size = 14) + 
@@ -38,6 +37,7 @@ bartlett.test(GBR_Sites_Processed_2004$LHC_mean ~ GBR_Sites_Processed_2004$Zone)
 ########Continuing with model -- ANCOVA robust to departures from equal variance?
 
 #Model selection
+#Take out year?
 LHC_mixed_1 <- lme(data = GBR_Sites_Processed_2004, LHC_mean ~ Year + Zone + Grazers_mean + 
                    Corallivores_mean + MAC_mean, random = ~1|Site)
 
