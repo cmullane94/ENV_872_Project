@@ -5,7 +5,8 @@ getwd()
 library(tidyverse)
 library(GGally)
 library(nlme)
-library(lmtest)
+library(piecewiseSEM)
+library(MASS)
 
 # Setting ggplot theme
 deftheme <- theme_classic(base_size = 14) + 
@@ -24,7 +25,7 @@ GBR_Sites_Processed_2004$Year <- as.factor(GBR_Sites_Processed_2004$Year)
 
 #Examining normality of dependent variable (LHC_mean)
 #######Is this sufficient to test for normality?
-ggpairs(GBR_Sites_Processed_2004, columns = c(3, 9, 10, 11, 12))
+ggpairs(GBR_Sites_Processed_2004, columns = c(1, 3, 9, 10, 11, 12))
 
 #Testing for equal variances
 ##All population variances are not equal
@@ -33,32 +34,53 @@ bartlett.test(GBR_Sites_Processed_2004$Total.Fish.Densit_mean ~ GBR_Sites_Proces
 ########Continuing with model -- ANCOVA robust to departures from equal variance?
 
 #Model selection
-#Take out year?
-Fish_mixed_1 <- lme(data = GBR_Sites_Processed_2004, Total.Fish.Densit_mean ~ Zone + LHC_mean + 
-                     LCC_mean + SCI_mean + MAC_mean, random = ~1|Site)
+Fish_mixed_1 <- lme(data = GBR_Sites_Processed_2004, log(Total.Fish.Densit_mean) ~ Year + Zone + LHC_mean + 
+                     LCC_mean + SCI_mean + MAC_mean, random = ~1|Site, method = "ML")
 
 summary(Fish_mixed_1)
 rsquared(Fish_mixed_1)
 AIC(Fish_mixed_1)
 
-Fish_mixed_2 <- update(Fish_mixed_1 , .~.-LCC_mean)
+stepAIC(Fish_mixed_1)
+#Final Model: Total.Fish.Densit_mean ~ Year + LHC_mean + MAC_mean, random = ~1|Site
 
-summary(Fish_mixed_2)
-rsquared(Fish_mixed_2)
-AIC(Fish_mixed_2)
+Fish_mixed_final <- lme(data = GBR_Sites_Processed_2004, log(Total.Fish.Densit_mean) ~ Year + LHC_mean, random = ~1|Site, method = "ML")
 
-Fish_mixed_3 <- update(Fish_mixed_2 , .~.-Zone)
+summary(Fish_mixed_final)
+rsquared(Fish_mixed_final)
+AIC(Fish_mixed_final)
 
-summary(Fish_mixed_3)
-rsquared(Fish_mixed_3)
-AIC(Fish_mixed_3)
+#Checking model fit with residuals vs. fitted plot
+#The line is approximately at zero and the points are evenly distributed around it; 
+#no drastic asymmetry
+plot(Fish_mixed_final)
 
-Fish_mixed_4 <- update(Fish_mixed_3 , .~.-SCI_mean)
+co
 
-summary(Fish_mixed_4)
-rsquared(Fish_mixed_4)
-AIC(Fish_mixed_4)
+eq_2004 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1]}
+eq_2006 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[2]}
+eq_2007 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[3]}
+eq_2008 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[4]}
+eq_2009 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[5]}
+eq_2011 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[6]}
+eq_2012 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[7]}
+eq_2013 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[8]}
+eq_2014 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[9]}
 
-lrtest(Fish_mixed_1, Fish_mixed_2)
-lrtest(Fish_mixed_1, Fish_mixed_3)
-lrtest(Fish_mixed_1, Fish_mixed_4)
+ggplot(GBR_Sites_Processed_2004) + 
+  aes (y = log(Total.Fish.Densit_mean), x = LHC_mean, color = Year) +
+  geom_point() +
+  scale_color_viridis_d(direction = -1) +
+  labs(x = "Mean live hard coral % cover", 
+       y = expression('Ln mean total fish density (per 1000 m'^"2"*')'),
+       color = "") +
+  #geom_smooth(method = lm, se = FALSE),
+  stat_function(fun = eq_2004, color = "#FDE725FF", size = 1) + 
+  stat_function(fun = eq_2006, color = "#AADC32FF", size = 1) +
+  stat_function(fun = eq_2007, color = "#5DC863FF", size = 1) +
+  stat_function(fun = eq_2008, color = "#27AD81FF", size = 1) +
+  stat_function(fun = eq_2009, color = "#21908CFF", size = 1) +
+  stat_function(fun = eq_2011, color = "#2C728EFF", size = 1) +
+  stat_function(fun = eq_2012, color = "#3B528BFF", size = 1) +
+  stat_function(fun = eq_2013, color = "#472D7BFF", size = 1) +
+  stat_function(fun = eq_2014, color = "#440154FF", size = 1) 

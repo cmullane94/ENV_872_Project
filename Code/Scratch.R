@@ -1,3 +1,29 @@
+Fish_mixed_2 <- update(Fish_mixed_1 , .~.-LCC_mean)
+
+summary(Fish_mixed_2)
+rsquared(Fish_mixed_2)
+AIC(Fish_mixed_2)
+
+Fish_mixed_3 <- update(Fish_mixed_2 , .~.-Zone)
+
+summary(Fish_mixed_3)
+rsquared(Fish_mixed_3)
+AIC(Fish_mixed_3)
+
+Fish_mixed_4 <- update(Fish_mixed_3 , .~.-SCI_mean)
+
+summary(Fish_mixed_4)
+rsquared(Fish_mixed_4)
+AIC(Fish_mixed_4)
+
+lrtest(Fish_mixed_1, Fish_mixed_2)
+lrtest(Fish_mixed_1, Fish_mixed_3)
+lrtest(Fish_mixed_1, Fish_mixed_4)
+
+
+#####################################3
+
+
 LHC_mixed_1 <- lme(data = GBR_Sites_Processed_2004, LHC_mean ~ Year * Zone * Grazers_mean * 
                      Corallivores_mean * MAC_mean, random = ~1|Site)
 
