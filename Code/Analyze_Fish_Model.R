@@ -67,7 +67,7 @@ eq_2012 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)
 eq_2013 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[8]}
 eq_2014 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[9]}
 
-ggplot(GBR_Sites_Processed_2004) + 
+Fish_densit_plot <- ggplot(GBR_Sites_Processed_2004) + 
   aes (y = log(Total.Fish.Densit_mean), x = LHC_mean, color = Year) +
   geom_point() +
   scale_color_viridis_d(direction = -1) +
@@ -84,3 +84,5 @@ ggplot(GBR_Sites_Processed_2004) +
   stat_function(fun = eq_2012, color = "#3B528BFF", size = 1) +
   stat_function(fun = eq_2013, color = "#472D7BFF", size = 1) +
   stat_function(fun = eq_2014, color = "#440154FF", size = 1) 
+
+print(Fish_densit_plot)

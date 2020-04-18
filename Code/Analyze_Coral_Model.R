@@ -65,7 +65,7 @@ plot(LHC_mixed_final)
 
 #Plotting analysis results
 ######ablines?
-ggplot(GBR_Sites_Processed_2004) + 
+LHC_corallivores_plot <- ggplot(GBR_Sites_Processed_2004) + 
   aes(y = LHC_mean, color = MAC_mean, x = Corallivores_mean) +
   geom_point() +
   ylim(0, 100) +
@@ -75,8 +75,9 @@ ggplot(GBR_Sites_Processed_2004) +
        color = "Mean fleshy macroalgae % cover") +
   facet_wrap(vars(Year))
 
+print(LHC_corallivores_plot)
 
-ggplot(GBR_Sites_Processed_2004) + 
+LHC_grazers_plot <- ggplot(GBR_Sites_Processed_2004) + 
   aes(y = LHC_mean, color = MAC_mean, x = Grazers_mean) +
   geom_point() +
   ylim(0, 100) +
@@ -86,3 +87,4 @@ ggplot(GBR_Sites_Processed_2004) +
        color = "Mean fleshy macroalgae % cover") +
   facet_wrap(vars(Year))
 
+print(LHC_grazers_plot)
