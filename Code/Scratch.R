@@ -24,6 +24,47 @@ lrtest(Fish_mixed_1, Fish_mixed_4)
 #####################################3
 
 
+LHC_mixed_2 <- update(LHC_mixed_1, .~.-Zone)
+
+summary(LHC_mixed_2)
+rsquared(LHC_mixed_2)
+AIC(LHC_mixed_2)
+
+LHC_mixed_3 <- update(LHC_mixed_2, .~.-Grazers_mean)
+
+summary(LHC_mixed_3)
+rsquared(LHC_mixed_3)
+AIC(LHC_mixed_3)
+
+LHC_mixed_4 <- update(LHC_mixed_3, .~.-MAC)
+
+summary(LHC_mixed_4)
+rsquared(LHC_mixed_4)
+AIC(LHC_mixed_4)
+
+#Likelihood ratio test to 
+lrtest(LHC_mixed_1, LHC_mixed_2)
+lrtest(LHC_mixed_1, LHC_mixed_3)
+lrtest(LHC_mixed_1, LHC_mixed_4)
+
+#############
+
+ggplot(GBR_Sites_Processed_2004) + 
+  aes(y = LHC_mean, color = MAC_mean, x = Corallivores_mean) +
+  geom_point() +
+  ylim(0, 100) +
+  facet_grid(Year ~ Zone)
+
+ggplot(GBR_Sites_Processed_2004) + 
+  aes(y = LHC_mean, color = MAC_mean, x = Grazers_mean) +
+  geom_point() +
+  ylim(0, 100) +
+  facet_grid(Year ~ Zone)
+
+
+######################################3
+
+
 LHC_mixed_1 <- lme(data = GBR_Sites_Processed_2004, LHC_mean ~ Year * Zone * Grazers_mean * 
                      Corallivores_mean * MAC_mean, random = ~1|Site)
 
