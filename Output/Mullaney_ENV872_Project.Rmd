@@ -27,16 +27,20 @@ getwd()
 
 # Load your packages
 library(tidyverse)
+library(GGally)
+library(nlme)
+library(piecewiseSEM)
+library(MASS)
+library(agricolae)
 
 # Set your ggplot theme
 deftheme <- theme_classic(base_size = 14) + 
   theme(axis.text = element_text(color = "black"),
-        legend.position = "right") 
+        legend.position = "top") 
 theme_set(deftheme)
 
 # Load your datasets
 GBR_Sites <- read.csv("./Data/Raw/data.gov.au_fish_benthos_GBR_sites_raw.csv")
-GBR_Zones <- read.csv("./Data/Raw/data.gov.au_fish_benthos_GBR_zones_raw.csv")
 
 ```
 
@@ -46,6 +50,16 @@ GBR_Zones <- read.csv("./Data/Raw/data.gov.au_fish_benthos_GBR_zones_raw.csv")
 • Contains rationale for dataset of choice
 • Contains one or more questions of an appropriate scope
 for the project
+
+As stressors such as ___ increasingly affect coral reefs worldwide, multiple-use zoning is becoming 
+
+This dataset was selected because it is one of the few projects established with the goal of specifically assessing the ecological effects of multiple-use zoning on the inshore coral reefs of the Great Barrier Reef Marine Park (GBRMP). Additionally, it is the only long-term monitoring project with a dataset that was established prior to the implementation of a new zoning management plan in 2004.
+
+This project sought to answer the following questions about the inshore coral reefs of the GBRMP:
+
+1. What variables impact live hard coral cover?
+2. What variables impact fish density?
+3. Do no-take zones established in 1987, no-take zones established in 2004, and fished zones have different mean amounts of live hard coral cover, fish density, and fish species richness?
 
 \newpage
 

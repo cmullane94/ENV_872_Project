@@ -64,27 +64,174 @@ AIC(LHC_mixed_final)
 plot(LHC_mixed_final)
 
 #Plotting analysis results
-######ablines?
+#Equations, corallivores vary
+eq_2004_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
+    fixef(LHC_mixed_final)[1] + 
+    fixef(LHC_mixed_final)[10] * mean(Grazers_mean[Year == 2004]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2004])})
+eq_2006_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[2] + 
+    fixef(LHC_mixed_final)[10] * mean(Grazers_mean[Year == 2006]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2006])})
+eq_2007_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[3] + 
+    fixef(LHC_mixed_final)[10] * mean(Grazers_mean[Year == 2007]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2007])})
+eq_2008_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[4] + 
+    fixef(LHC_mixed_final)[10] * mean(Grazers_mean[Year == 2008]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2008])})
+eq_2009_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[5] + 
+    fixef(LHC_mixed_final)[10] * mean(Grazers_mean[Year == 2009]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2009])})
+eq_2011_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[6] + 
+    fixef(LHC_mixed_final)[10] * mean(Grazers_mean[Year == 2011]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2011])})
+eq_2012_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[7] + 
+    fixef(LHC_mixed_final)[10] * mean(Grazers_mean[Year == 2012]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2012])})
+eq_2013_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[8] + 
+    fixef(LHC_mixed_final)[10] * mean(Grazers_mean[Year == 2013]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2013])})
+eq_2014_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[9] + 
+    fixef(LHC_mixed_final)[10] * mean(Grazers_mean[Year == 2014]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2014])})
+
+#Plot with corallivores on the x-axis
 LHC_corallivores_plot <- ggplot(GBR_Sites_Processed_2004) + 
   aes(y = LHC_mean, color = MAC_mean, x = Corallivores_mean) +
   geom_point() +
   ylim(0, 100) +
   scale_color_viridis_c(option = "plasma") +
   labs(y = "Mean live hard coral % cover", 
-       x = "Mean number of grazer fish species",
+       x = "Mean number of corallivore fish species",
        color = "Mean fleshy macroalgae % cover") +
-  facet_wrap(vars(Year))
+  facet_wrap(vars(Year)) +
+  stat_function(fun = eq_2004_coral, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2004)) + 
+  stat_function(fun = eq_2006_coral, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2006)) +
+  stat_function(fun = eq_2007_coral, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2007)) +
+  stat_function(fun = eq_2008_coral, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2008)) +
+  stat_function(fun = eq_2009_coral, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2009)) +
+  stat_function(fun = eq_2011_coral, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2011)) +
+  stat_function(fun = eq_2012_coral, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2012)) +
+  stat_function(fun = eq_2013_coral, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2013)) +
+  stat_function(fun = eq_2014_coral, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2014)) 
 
 print(LHC_corallivores_plot)
 
+#Equations, grazers vary
+eq_2004_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
+    fixef(LHC_mixed_final)[1] + 
+    fixef(LHC_mixed_final)[11] * mean(Corallivores_mean[Year == 2004]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2004])})
+eq_2006_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[2] + 
+    fixef(LHC_mixed_final)[11] * mean(Corallivores_mean[Year == 2006]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2006])})
+eq_2007_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[3] + 
+    fixef(LHC_mixed_final)[11] * mean(Corallivores_mean[Year == 2007]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2007])})
+eq_2008_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[4] + 
+    fixef(LHC_mixed_final)[11] * mean(Corallivores_mean[Year == 2008]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2008])})
+eq_2009_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[5] + 
+    fixef(LHC_mixed_final)[11] * mean(Corallivores_mean[Year == 2009]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2009])})
+eq_2011_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[6] + 
+    fixef(LHC_mixed_final)[11] * mean(Corallivores_mean[Year == 2011]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2011])})
+eq_2012_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[7] + 
+    fixef(LHC_mixed_final)[11] * mean(Corallivores_mean[Year == 2012]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2012])})
+eq_2013_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[8] + 
+    fixef(LHC_mixed_final)[11] * mean(Corallivores_mean[Year == 2013]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2013])})
+eq_2014_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
+    fixef(LHC_mixed_final)[1] +
+    fixef(LHC_mixed_final)[9] + 
+    fixef(LHC_mixed_final)[11] * mean(Corallivores_mean[Year == 2014]) +
+    fixef(LHC_mixed_final)[12] * mean(MAC_mean[Year == 2014])})
+
+#Plot with grazers on the x axis
 LHC_grazers_plot <- ggplot(GBR_Sites_Processed_2004) + 
   aes(y = LHC_mean, color = MAC_mean, x = Grazers_mean) +
   geom_point() +
   ylim(0, 100) +
   scale_color_viridis_c(option = "plasma") +
   labs(y = "Mean live hard coral % cover", 
-       x = "Mean number of corallivore fish species",
+       x = "Mean number of grazer fish species",
        color = "Mean fleshy macroalgae % cover") +
-  facet_wrap(vars(Year))
+  facet_wrap(vars(Year)) +
+  stat_function(fun = eq_2004_grazer, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2004)) + 
+  stat_function(fun = eq_2006_grazer, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2006)) +
+  stat_function(fun = eq_2007_grazer, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2007)) +
+  stat_function(fun = eq_2008_grazer, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2008)) +
+  stat_function(fun = eq_2009_grazer, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2009)) +
+  stat_function(fun = eq_2011_grazer, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2011)) +
+  stat_function(fun = eq_2012_grazer, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2012)) +
+  stat_function(fun = eq_2013_grazer, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2013)) +
+  stat_function(fun = eq_2014_grazer, 
+                data = subset(GBR_Sites_Processed_2004, 
+                              Year == 2014)) 
 
 print(LHC_grazers_plot)

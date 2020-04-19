@@ -55,34 +55,21 @@ AIC(Fish_mixed_final)
 #no drastic asymmetry
 plot(Fish_mixed_final)
 
-co
+#Plot using predict
 
-eq_2004 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1]}
-eq_2006 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[2]}
-eq_2007 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[3]}
-eq_2008 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[4]}
-eq_2009 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[5]}
-eq_2011 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[6]}
-eq_2012 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[7]}
-eq_2013 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[8]}
-eq_2014 <- function(x){fixef(Fish_mixed_final)[10] * x + fixef(Fish_mixed_final)[1] + fixef(Fish_mixed_final)[9]}
+GBR_Sites_Processed_2004_fish_lme <- mutate(GBR_Sites_Processed_2004, Model = predict(Fish_mixed_final, level = 0))
 
-Fish_densit_plot <- ggplot(GBR_Sites_Processed_2004) + 
-  aes (y = log(Total.Fish.Densit_mean), x = LHC_mean, color = Year) +
+Fish_densit_plot <- ggplot(GBR_Sites_Processed_2004_fish_lme) + 
+  aes(y = log(Total.Fish.Densit_mean), x = LHC_mean, color = Year) +
   geom_point() +
+  geom_line(aes(x = LHC_mean, y = Model)) +
   scale_color_viridis_d(direction = -1) +
   labs(x = "Mean live hard coral % cover", 
        y = expression('Ln mean total fish density (per 1000 m'^"2"*')'),
-       color = "") +
-  #geom_smooth(method = lm, se = FALSE),
-  stat_function(fun = eq_2004, color = "#FDE725FF", size = 1) + 
-  stat_function(fun = eq_2006, color = "#AADC32FF", size = 1) +
-  stat_function(fun = eq_2007, color = "#5DC863FF", size = 1) +
-  stat_function(fun = eq_2008, color = "#27AD81FF", size = 1) +
-  stat_function(fun = eq_2009, color = "#21908CFF", size = 1) +
-  stat_function(fun = eq_2011, color = "#2C728EFF", size = 1) +
-  stat_function(fun = eq_2012, color = "#3B528BFF", size = 1) +
-  stat_function(fun = eq_2013, color = "#472D7BFF", size = 1) +
-  stat_function(fun = eq_2014, color = "#440154FF", size = 1) 
+       color = "")
 
 print(Fish_densit_plot)
+
+
+
+  
