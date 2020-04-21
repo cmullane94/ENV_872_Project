@@ -34,8 +34,11 @@ bartlett.test(GBR_Sites_Processed_2004$Total.Fish.Densit_mean ~ GBR_Sites_Proces
 ########Continuing with model -- ANCOVA robust to departures from equal variance?
 
 #Model selection
-Fish_mixed_1 <- lme(data = GBR_Sites_Processed_2004, log(Total.Fish.Densit_mean) ~ Year + Zone + LHC_mean + 
-                     LCC_mean + SCI_mean + MAC_mean, random = ~1|Site, method = "ML")
+Fish_mixed_1 <- lme(data = GBR_Sites_Processed_2004, 
+                    log(Total.Fish.Densit_mean) ~ 
+                      Year + Zone + LHC_mean + LCC_mean + 
+                      SCI_mean + MAC_mean,
+                    random = ~1|Site, method = "ML")
 
 summary(Fish_mixed_1)
 rsquared(Fish_mixed_1)
@@ -44,7 +47,9 @@ AIC(Fish_mixed_1)
 stepAIC(Fish_mixed_1)
 #Final Model: Total.Fish.Densit_mean ~ Year + LHC_mean + MAC_mean, random = ~1|Site
 
-Fish_mixed_final <- lme(data = GBR_Sites_Processed_2004, log(Total.Fish.Densit_mean) ~ Year + LHC_mean, random = ~1|Site, method = "ML")
+Fish_mixed_final <- lme(data = GBR_Sites_Processed_2004, 
+                        log(Total.Fish.Densit_mean) ~ Year + LHC_mean, 
+                        random = ~1|Site, method = "ML")
 
 summary(Fish_mixed_final)
 rsquared(Fish_mixed_final)
@@ -56,8 +61,10 @@ AIC(Fish_mixed_final)
 plot(Fish_mixed_final)
 
 #Plot using predict
-
+##Mutating dataset to add a column of predicted values
 GBR_Sites_Processed_2004_fish_lme <- mutate(GBR_Sites_Processed_2004, Model = predict(Fish_mixed_final, level = 0))
+write.csv(GBR_Sites_Processed_2004_fish_lme, row.names = FALSE, 
+          file = "./Data/Processed/data.gov.au_fish_lme_2004_processed.csv")
 
 Fish_densit_plot <- ggplot(GBR_Sites_Processed_2004_fish_lme) + 
   aes(y = log(Total.Fish.Densit_mean), x = LHC_mean, color = Year) +

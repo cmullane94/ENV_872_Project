@@ -5,7 +5,7 @@ output:
     fig_caption: yes
     number_sections: yes
 geometry: margin=2.54cm
-title: "Insert title of project here"
+title: "Analysis of factors impacting fish and coral abundance across management zones on the inshore coral reefs of the Great Barrier Reef Marine Park"
 subtitle: "https://github.com/cmullane94/ENV_872_Project"
 author: "Claire Mullaney"
 fontsize: 12pt
@@ -36,12 +36,17 @@ library(agricolae)
 # Set your ggplot theme
 deftheme <- theme_classic(base_size = 14) + 
   theme(axis.text = element_text(color = "black"),
-        legend.position = "top") 
+        legend.position = "right") 
 theme_set(deftheme)
 
 # Load your datasets
-GBR_Sites <- read.csv("./Data/Raw/data.gov.au_fish_benthos_GBR_sites_raw.csv")
+GBR_Sites_Processed_2004 <- read.csv("./Data/Processed/data.gov.au_fish_benthos_GBR_sites_2004_processed.csv")
+GBR_Sites_Processed_1999 <- read.csv("./Data/Processed/data.gov.au_fish_benthos_GBR_sites_1999_processed.csv")
+GBR_Sites_Processed_2004_fish_lme <- read.csv("./Data/Processed/data.gov.au_fish_lme_2004_processed.csv")
 
+GBR_Sites_Processed_2004$Year <- as.factor(GBR_Sites_Processed_2004$Year)
+GBR_Sites_Processed_1999$Year <- as.factor(GBR_Sites_Processed_1999$Year)
+GBR_Sites_Processed_2004_fish_lme$Year <- as.factor(GBR_Sites_Processed_2004_fish_lme$Year)
 ```
 
 # Rationale and Research Questions
@@ -88,6 +93,20 @@ relevant statistical output in parentheses
 • Findings are reported clearly in relation to research
 questions
 
+
+```{r TN Plot, echo = FALSE, fig.align = left, fig.cap = "Modeled relationship between the mean percent cover of living hard coral and the natural log of fish density for 2004, 2006-2009, and 2011-2014"}
+
+Fish_densit_plot <- ggplot(GBR_Sites_Processed_2004_fish_lme) + 
+  aes(y = log(Total.Fish.Densit_mean), x = LHC_mean, color = Year) +
+  geom_point() +
+  geom_line(aes(x = LHC_mean, y = Model)) +
+  scale_color_viridis_d(direction = -1) +
+  labs(x = "Mean live hard coral % cover", 
+       y = expression('Ln mean total fish density (per 1000 m'^"2"*')'),
+       color = "")
+
+print(Fish_densit_plot)
+```
 ## Question 1: <insert specific question here and add additional subsections for additional questions below, if needed>
 
 ## Question 2: 

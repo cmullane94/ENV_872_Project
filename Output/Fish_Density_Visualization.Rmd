@@ -1,0 +1,39 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "/Users/clairemullaney/Desktop/ENV 872/Environmental_Data_Analytics_2020/Project/ENV_872_Project")
+# Set your working directory
+getwd()
+
+# Load your packages
+library(tidyverse)
+
+# Set your ggplot theme
+deftheme <- theme_classic(base_size = 14) + 
+  theme(axis.text = element_text(color = "black"),
+        legend.position = "right") 
+theme_set(deftheme)
+
+# Load your datasets
+GBR_Sites_Processed_2004_fish_lme <- read.csv("./Data/Processed/data.gov.au_fish_lme_2004_processed.csv")
+GBR_Sites_Processed_2004_fish_lme$Year <- as.factor(GBR_Sites_Processed_2004_fish_lme$Year)
+```
+
+```{r TN Plot, echo = FALSE, fig.align = "left", fig.cap = "Modeled relationship between the mean percent cover of living hard coral and the natural log of the mean fish density for 2004, 2006-2009, and 2011-2014."}
+
+Fish_densit_plot <- ggplot(GBR_Sites_Processed_2004_fish_lme) + 
+  aes(y = log(Total.Fish.Densit_mean), x = LHC_mean, color = Year) +
+  geom_point() +
+  geom_line(aes(x = LHC_mean, y = Model)) +
+  scale_color_viridis_d(direction = -1) +
+  labs(x = "Mean live hard coral % cover", 
+       y = expression('Ln mean total fish density (per 1000 m'^"2"*')'),
+       color = "")
+
+print(Fish_densit_plot)
+```
