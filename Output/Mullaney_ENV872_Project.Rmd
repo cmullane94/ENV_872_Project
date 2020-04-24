@@ -109,7 +109,7 @@ Each figure should be accompanied by a caption, and each figure should be refere
 
 ## Question 1: What variables affect the percentage cover of live hard coral on the inshore coral reefs of the GBRMP?
 
-To determine factors influencing live hard coral cover within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To account for the random effects of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise Akaike information criterion (AIC) analysis, contained the explanatory variables year, the mean number of grazer fish species, the mean number of corallivore fish species, and the mean percentage cover of fleshy macroalgae. Year, the mean number of grazer fish species, the mean percentage cover of fleshy macroalgae significantly decrease the mean percentage of live hard coral cover, while the mean number of corallivore fish species significantly increase the mean percentage of live hard coral cover (pseudo R^2^ = 0.8078; Figures...). When all other variables are held constant, each additional fish included in the mean number of grazers will decrease mean live hard coral percent cover by 0.0227% (df = 358, t = -2.805, p < 0.05). Similarly, a one unit increase in the mean macroalgae percent cover will decrease mean live hard coral percent cover by 0.354% (df = 358, t = 7.641, p < 0.0001), while a one unit increase in the mean number of corallivores will increase mean live hard coral percent cover by 0.265% (df = 358, t = 7.812, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figures...). 
+To determine factors influencing live hard coral cover within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To account for the random effects of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise Akaike information criterion (AIC) analysis, contained the explanatory variables of year, the mean number of grazer fish species, the mean number of corallivore fish species, and the mean percentage cover of fleshy macroalgae. Year, the mean number of grazer fish species, the mean percentage cover of fleshy macroalgae significantly decrease the mean percentage of live hard coral cover, while the mean number of corallivore fish species significantly increase the mean percentage of live hard coral cover (pseudo R^2^ = 0.8078; Figures...). When all other variables are held constant, each additional fish included in the mean number of grazers will decrease mean live hard coral percent cover by 0.0227% (df = 358, t = -2.805, p < 0.05). Similarly, a one unit increase in the mean macroalgae percent cover will decrease mean live hard coral percent cover by 0.354% (df = 358, t = 7.641, p < 0.0001), while a one unit increase in the mean number of corallivores will increase mean live hard coral percent cover by 0.265% (df = 358, t = 7.812, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figures...). 
 
 ``` {r Coral Percent Cover Model, include = FALSE}
 LHC_mixed_final <- lme(data = GBR_Sites_Processed_2004, LHC_mean ~ Year + Grazers_mean + 
@@ -298,16 +298,21 @@ print(LHC_grazers_plot)
 
 ## Question 2: What variables affect fish density on the inshore coral reefs of the GBRMP?
 
+To determine factors influencing mean total fish density within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To again account for the random effects of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise AIC analysis, contained the explanatory variables of year and mean percentage of live hard coral cover. The mean percentage of live hard coral cover was found to increase the natural log of mean total fish density (pseudo R^2^ = 0.8087; Figure...). When all other variables are held constant, each additional 1% of live hard coral cover will increase the mean total fish density by 1.536% (df = 360, t = 7.429, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figure...). 
+
 ```{r Fish Density Plot, echo = FALSE, fig.align = "left", fig.cap = "Modeled relationship between the mean percent cover of living hard coral and the natural log of fish density for 2004, 2006-2009, and 2011-2014."}
 
 Fish_densit_plot <- ggplot(GBR_Sites_Processed_2004_fish_lme) + 
   aes(y = log(Total.Fish.Densit_mean), x = LHC_mean, color = Year) +
   geom_point() +
   geom_line(aes(x = LHC_mean, y = Model)) +
-  scale_color_viridis_d(direction = -1) +
   labs(x = "Mean live hard coral % cover", 
        y = expression('Ln mean total fish density (per 1000 m'^"2"*')'),
-       color = "")
+       color = "") +
+  scale_color_viridis_d(direction = -1, 
+                        labels = c("2004 (a)", "2006 (ce)", "2007 (e)",
+                                   "2008 (de)", "2009 (ce)", "2011 (acd)",
+                                   "2012 (ac)", "2013 (b)", "2014 (ac)"))
 
 print(Fish_densit_plot)
 ```

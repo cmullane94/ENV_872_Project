@@ -55,10 +55,20 @@ summary(Fish_mixed_final)
 rsquared(Fish_mixed_final)
 AIC(Fish_mixed_final)
 
+#Interpreting the LHC_mean coefficient in the context of the natural log transformed dependent variable
+(exp(fixef(Fish_mixed_final)[10]) - 1) * 100
+
 #Checking model fit with residuals vs. fitted plot
 #The line is approximately at zero and the points are evenly distributed around it; 
 #no drastic asymmetry
 plot(Fish_mixed_final)
+
+#Examining pairwise relationships of years; forming groups
+fish_mixed_tukey <- summary(glht(Fish_mixed_final, linfct = mcp(Year = "Tukey")))
+fish_mixed_tukey
+
+cld(fish_mixed_tukey)
+plot(fish_mixed_tukey)
 
 #Plot using predict
 ##Mutating dataset to add a column of predicted values
@@ -70,10 +80,13 @@ Fish_densit_plot <- ggplot(GBR_Sites_Processed_2004_fish_lme) +
   aes(y = log(Total.Fish.Densit_mean), x = LHC_mean, color = Year) +
   geom_point() +
   geom_line(aes(x = LHC_mean, y = Model)) +
-  scale_color_viridis_d(direction = -1) +
   labs(x = "Mean live hard coral % cover", 
        y = expression('Ln mean total fish density (per 1000 m'^"2"*')'),
-       color = "")
+       color = "") +
+  scale_color_viridis_d(direction = -1, 
+                        labels = c("2004 (a)", "2006 (ce)", "2007 (e)",
+                                   "2008 (de)", "2009 (ce)", "2011 (acd)",
+                                   "2012 (ac)", "2013 (b)", "2014 (ac)"))
 
 print(Fish_densit_plot)
 

@@ -59,17 +59,17 @@ summary(LHC_mixed_final)
 rsquared(LHC_mixed_final)
 AIC(LHC_mixed_final)
 
+#Checking model fit with residuals vs. fitted plot
+#The line is approximately at zero and the points are evenly distributed around it; 
+#no drastic asymmetry
+plot(LHC_mixed_final)
+
 #Examining pairwise relationships of years; forming groups
 LHC_mixed_tukey <- summary(glht(LHC_mixed_final, linfct = mcp(Year = "Tukey")))
 LHC_mixed_tukey
 
 cld(LHC_mixed_tukey)
 plot(LHC_mixed_tukey)
-
-#Checking model fit with residuals vs. fitted plot
-#The line is approximately at zero and the points are evenly distributed around it; 
-#no drastic asymmetry
-plot(LHC_mixed_final)
 
 #Plotting analysis results
 #Equations, corallivores vary
