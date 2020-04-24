@@ -30,6 +30,46 @@
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -223,24 +263,24 @@ account for the random effects of study site and allow extrapolation of
 results to potential study sites not included in the data, site was
 included as a random effect. The best-fitting model, which was found
 using stepwise Akaike information criterion (AIC) analysis, contained
-the explanatory variables year, the mean number of grazer fish species,
-the mean number of corallivore fish species, and the mean percentage
-cover of fleshy macroalgae. Year, the mean number of grazer fish
-species, the mean percentage cover of fleshy macroalgae significantly
-decrease the mean percentage of live hard coral cover, while the mean
-number of corallivore fish species significantly increase the mean
-percentage of live hard coral cover (pseudo R\textsuperscript{2} =
-0.8078; Figures\ldots{}). When all other variables are held constant,
-each additional fish included in the mean number of grazers will
-decrease mean live hard coral percent cover by 0.0227\% (df = 358, t =
--2.805, p \textless{} 0.05). Similarly, a one unit increase in the mean
-macroalgae percent cover will decrease mean live hard coral percent
-cover by 0.354\% (df = 358, t = 7.641, p \textless{} 0.0001), while a
-one unit increase in the mean number of corallivores will increase mean
-live hard coral percent cover by 0.265\% (df = 358, t = 7.812, p
-\textless{} 0.0001). A post hoc Tukey test was used to evaluate pairwise
-relationships of different years and extract groupings based on these
-pairwise relationships (Figures\ldots{}).
+the explanatory variables of year, the mean number of grazer fish
+species, the mean number of corallivore fish species, and the mean
+percentage cover of fleshy macroalgae. Year, the mean number of grazer
+fish species, the mean percentage cover of fleshy macroalgae
+significantly decrease the mean percentage of live hard coral cover,
+while the mean number of corallivore fish species significantly increase
+the mean percentage of live hard coral cover (pseudo
+R\textsuperscript{2} = 0.8078; Figures\ldots{}). When all other
+variables are held constant, each additional fish included in the mean
+number of grazers will decrease mean live hard coral percent cover by
+0.0227\% (df = 358, t = -2.805, p \textless{} 0.05). Similarly, a one
+unit increase in the mean macroalgae percent cover will decrease mean
+live hard coral percent cover by 0.354\% (df = 358, t = 7.641, p
+\textless{} 0.0001), while a one unit increase in the mean number of
+corallivores will increase mean live hard coral percent cover by 0.265\%
+(df = 358, t = 7.812, p \textless{} 0.0001). A post hoc Tukey test was
+used to evaluate pairwise relationships of different years and extract
+groupings based on these pairwise relationships (Figures\ldots{}).
 
 \begin{figure}
 
@@ -261,6 +301,22 @@ pairwise relationships (Figures\ldots{}).
 inshore coral reefs of the
 GBRMP?}\label{question-2-what-variables-affect-fish-density-on-the-inshore-coral-reefs-of-the-gbrmp}}
 
+To determine factors influencing mean total fish density within the
+GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used.
+To again account for the random effects of study site and allow
+extrapolation of results to potential study sites not included in the
+data, site was included as a random effect. The best-fitting model,
+which was found using stepwise AIC analysis, contained the explanatory
+variables of year and mean percentage of live hard coral cover. The mean
+percentage of live hard coral cover was found to increase the natural
+log of mean total fish density (pseudo R\textsuperscript{2} = 0.8087;
+Figure\ldots{}). When all other variables are held constant, each
+additional 1\% of live hard coral cover will increase the mean total
+fish density by 1.536\% (df = 360, t = 7.429, p \textless{} 0.0001). A
+post hoc Tukey test was used to evaluate pairwise relationships of
+different years and extract groupings based on these pairwise
+relationships (Figure\ldots{}).
+
 \begin{figure}
 
 \includegraphics{Mullaney_ENV872_Project_files/figure-latex/Fish Density Plot-1} \hfill{}
@@ -268,10 +324,52 @@ GBRMP?}\label{question-2-what-variables-affect-fish-density-on-the-inshore-coral
 \caption{Modeled relationship between the mean percent cover of living hard coral and the natural log of fish density for 2004, 2006-2009, and 2011-2014.}\label{fig:Fish Density Plot}
 \end{figure}
 
-\#\#Question 3: Do no-take zones established in 1987, no-take zones
-established in 2004, and fished zones have different mean amounts of
-live hard coral cover, fish density, and fish species richness?
+\hypertarget{question-3-do-no-take-zones-established-in-1987-no-take-zones-established-in-2004-and-fished-zones-have-different-mean-amounts-of-live-hard-coral-cover-fish-density-and-fish-species-richness}{%
+\subsection{Question 3: Do no-take zones established in 1987, no-take
+zones established in 2004, and fished zones have different mean amounts
+of live hard coral cover, fish density, and fish species
+richness?}\label{question-3-do-no-take-zones-established-in-1987-no-take-zones-established-in-2004-and-fished-zones-have-different-mean-amounts-of-live-hard-coral-cover-fish-density-and-fish-species-richness}}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#LHC}
+\NormalTok{LHC_zone_plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(GBR_Sites_Processed_}\DecValTok{1999}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Zone, }\DataTypeTok{y =}\NormalTok{ LHC_mean) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{stat_summary}\NormalTok{(}\DataTypeTok{geom =} \StringTok{"text"}\NormalTok{, }\DataTypeTok{fun.y =}\NormalTok{ max, }\DataTypeTok{vjust =} \DecValTok{-1}\NormalTok{, }\DataTypeTok{size =} \FloatTok{3.5}\NormalTok{,}
+               \DataTypeTok{label =} \KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"a"}\NormalTok{, }\StringTok{"a"}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{100}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \StringTok{"Mean live hard coral % cover"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.title.y =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{10}\NormalTok{))}
+
+\CommentTok{#Fish density}
+\NormalTok{Fish_densit_zone_plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(GBR_Sites_Processed_}\DecValTok{2004}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Zone, }\DataTypeTok{y =} \KeywordTok{log}\NormalTok{(Total.Fish.Densit_mean)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{stat_summary}\NormalTok{(}\DataTypeTok{geom =} \StringTok{"text"}\NormalTok{, }\DataTypeTok{fun.y =}\NormalTok{ max, }\DataTypeTok{vjust =} \DecValTok{-1}\NormalTok{, }\DataTypeTok{size =} \FloatTok{3.5}\NormalTok{,}
+               \DataTypeTok{label =} \KeywordTok{c}\NormalTok{(}\StringTok{"b"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylim}\NormalTok{(}\FloatTok{4.5}\NormalTok{, }\DecValTok{11}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \KeywordTok{expression}\NormalTok{(}\StringTok{'Ln mean total fish density (per 1000 m'}\OperatorTok{^}\StringTok{"2"}\OperatorTok{*}\StringTok{')'}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.title.x =} \KeywordTok{element_blank}\NormalTok{(), }\DataTypeTok{axis.text.x =} \KeywordTok{element_blank}\NormalTok{(),}
+        \DataTypeTok{axis.title.y =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{10}\NormalTok{))}
+
+\CommentTok{#Fish species richness}
+\NormalTok{Fish_species_rich_plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(GBR_Sites_Processed_}\DecValTok{2004}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Zone, }\DataTypeTok{y =}\NormalTok{ Fish.Species.richness_mean) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{stat_summary}\NormalTok{(}\DataTypeTok{geom =} \StringTok{"text"}\NormalTok{, }\DataTypeTok{fun.y =}\NormalTok{ max, }\DataTypeTok{vjust =} \DecValTok{-1}\NormalTok{, }\DataTypeTok{size =} \FloatTok{3.5}\NormalTok{,}
+               \DataTypeTok{label =} \KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"a"}\NormalTok{, }\StringTok{"a"}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylim}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{51}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \StringTok{"Mean number of fish species observed"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.title.x =} \KeywordTok{element_blank}\NormalTok{(), }\DataTypeTok{axis.text.x =} \KeywordTok{element_blank}\NormalTok{(),}
+              \DataTypeTok{axis.title.y =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{10}\NormalTok{))}
+
+\CommentTok{#Plotting all three graphs in one plot}
+\KeywordTok{plot_grid}\NormalTok{(Fish_species_rich_plot, Fish_densit_zone_plot, LHC_zone_plot, }\DataTypeTok{ncol =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Mullaney_ENV872_Project_files/figure-latex/Zoning Plots-1.pdf}
 \newpage
 
 \hypertarget{summary-and-conclusions}{%

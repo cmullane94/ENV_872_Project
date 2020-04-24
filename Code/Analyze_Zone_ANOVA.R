@@ -3,6 +3,7 @@ getwd()
 # Loading packages
 library(tidyverse)
 library(agricolae)
+library(cowplot)
 
 deftheme <- theme_classic(base_size = 14) + 
   theme(axis.text = element_text(color = "black"),
@@ -51,7 +52,8 @@ LHC_zone_plot <- ggplot(GBR_Sites_Processed_1999) +
   stat_summary(geom = "text", fun.y = max, vjust = -1, size = 3.5,
                label = c("a", "a", "a")) +
   ylim(0, 100) +
-  labs(y = "Mean live hard coral % cover")
+  labs(y = "Mean live hard coral % cover") +
+  theme(axis.title.y = element_text(size = 10))
 
 print(LHC_zone_plot)
 ###############################################
@@ -113,7 +115,9 @@ Fish_densit_zone_plot <- ggplot(GBR_Sites_Processed_2004) +
   stat_summary(geom = "text", fun.y = max, vjust = -1, size = 3.5,
                label = c("b", "b", "a")) +
   ylim(4.5, 11) +
-  labs(y = expression('Ln mean total fish density (per 1000 m'^"2"*')'))
+  labs(y = expression('Ln mean total fish density (per 1000 m'^"2"*')')) +
+  theme(axis.title.x = element_blank(), axis.text.x = element_blank(),
+        axis.title.y = element_text(size = 10))
 
 print(Fish_densit_zone_plot)
 
@@ -150,14 +154,19 @@ Fish_species_groups <- HSD.test(Fish_species_anova_lm, "Zone", group = TRUE)
 Fish_species_groups
 
 #Plotting
-Fish_densit_zone_plot <- ggplot(GBR_Sites_Processed_2004) +
+Fish_species_rich_plot <- ggplot(GBR_Sites_Processed_2004) +
   aes(x = Zone, y = Fish.Species.richness_mean) +
   geom_boxplot() +
   stat_summary(geom = "text", fun.y = max, vjust = -1, size = 3.5,
                label = c("a", "a", "a")) +
   ylim(5, 51) +
-  labs(y = "Mean number of fish species observed")
+  labs(y = "Mean number of fish species observed") +
+  theme(axis.title.x = element_blank(), axis.text.x = element_blank(),
+              axis.title.y = element_text(size = 10))
 
-print(Fish_densit_zone_plot)
+print(Fish_species_rich_plot)
+
+#Plotting all three graphs in one plot
+plot_grid(Fish_species_rich_plot, Fish_densit_zone_plot, LHC_zone_plot, ncol = 1)
 
 

@@ -35,6 +35,7 @@ library(nlme)
 library(piecewiseSEM)
 library(MASS)
 library(agricolae)
+library(cowplot)
 
 # Set your ggplot theme
 deftheme <- theme_classic(base_size = 14) + 
@@ -71,8 +72,8 @@ To examine the effects of GBRMP zoning practices on fish density, fish species r
 
 This project sought to answer the following questions about the inshore coral reefs of the GBRMP:
 
-1. What coral reef characterisitics and factors affect the percentage cover of live hard coral?
-2. What coral reef characterisitics and factors affect fish density?
+1. What variables affect the percentage cover of live hard coral?
+2. What variables affect fish density?
 3. Do no-take zones established in 1987, no-take zones established in 2004, and fished zones have different mean amounts of live hard coral cover, fish density, and fish species richness?
 
 \newpage
@@ -296,6 +297,7 @@ print(LHC_grazers_plot)
 
 ```
 
+
 ## Question 2: What variables affect fish density on the inshore coral reefs of the GBRMP?
 
 To determine factors influencing mean total fish density within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To again account for the random effects of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise AIC analysis, contained the explanatory variables of year and mean percentage of live hard coral cover. The mean percentage of live hard coral cover was found to increase the natural log of mean total fish density (pseudo R^2^ = 0.8087; Figure...). When all other variables are held constant, each additional 1% of live hard coral cover will increase the mean total fish density by 1.536% (df = 360, t = 7.429, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figure...). 
@@ -319,7 +321,46 @@ print(Fish_densit_plot)
 
 ## Question 3: Do no-take zones established in 1987, no-take zones established in 2004, and fished zones have different mean amounts of live hard coral cover, fish density, and fish species richness?
 
+To determine if mean fish density, mean fish species richness, and mean percent coral cover were significantly different among the three GBRMP zones in the data (no-take since 1987, no-take since 2004, and fished), three analysis of variance (ANCOVA) models were used. Zone was not found to significantly affect mean percent live coral cover (F~2, 703~ = 0.1649, p > 0.1) or mean fish species richness (F~2, 467~ = 2.396, p > 0.05). However, zone did significantly affect mean fish species density (F~2, 467~ = 6.137, p < 0.01) with the no-take zones from 2004 increasing mean fish density by 39.780% (t = 3.171, p < 0.01). A post hoc Tukey test was used to evaluate pairwise relationships of different zones and extract groupings based on these pairwise relationships (Figure...). 
 
+```{r Zoning Plots, echo = FALSE, fig.align = "left", fig.cap = "Modeled relationship between the mean percent cover of living hard coral and the natural log of fish density for 2004, 2006-2009, and 2011-2014."}
+#LHC
+LHC_zone_plot <- ggplot(GBR_Sites_Processed_1999) +
+  aes(x = Zone, y = LHC_mean) +
+  geom_boxplot() +
+  stat_summary(geom = "text", fun.y = max, vjust = -1, size = 3.5,
+               label = c("a", "a", "a")) +
+  ylim(0, 100) +
+  labs(y = "Mean live hard coral % cover") +
+  theme(axis.title.y = element_text(size = 10))
+
+#Fish density
+Fish_densit_zone_plot <- ggplot(GBR_Sites_Processed_2004) +
+  aes(x = Zone, y = log(Total.Fish.Densit_mean)) +
+  geom_boxplot() +
+  stat_summary(geom = "text", fun.y = max, vjust = -1, size = 3.5,
+               label = c("b", "b", "a")) +
+  ylim(4.5, 11) +
+  labs(y = expression('Ln mean total fish density (per 1000 m'^"2"*')')) +
+  theme(axis.title.x = element_blank(), axis.text.x = element_blank(),
+        axis.title.y = element_text(size = 10))
+
+#Fish species richness
+Fish_species_rich_plot <- ggplot(GBR_Sites_Processed_2004) +
+  aes(x = Zone, y = Fish.Species.richness_mean) +
+  geom_boxplot() +
+  stat_summary(geom = "text", fun.y = max, vjust = -1, size = 3.5,
+               label = c("a", "a", "a")) +
+  ylim(5, 51) +
+  labs(y = "Mean number of fish species observed") +
+  theme(axis.title.x = element_blank(), axis.text.x = element_blank(),
+              axis.title.y = element_text(size = 10))
+
+#Plotting all three graphs in one plot
+plot_grid(Fish_species_rich_plot, Fish_densit_zone_plot, LHC_zone_plot, ncol = 1)
+
+
+```
 \newpage
 
 # Summary and Conclusions
