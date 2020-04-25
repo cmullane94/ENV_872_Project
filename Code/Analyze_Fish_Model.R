@@ -61,6 +61,7 @@ AIC(Fish_mixed_final)
 #Checking model fit with residuals vs. fitted plot
 #The line is approximately at zero and the points are evenly distributed around it; 
 #no drastic asymmetry
+#Data was log transformed after observing symmetry/heteroscedasticity in the first model selection process
 plot(Fish_mixed_final)
 
 #Examining pairwise relationships of years; forming groups

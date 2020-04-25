@@ -46,6 +46,7 @@ GBR_Sites_Processed_2004 <- read.csv("./Data/Processed/data.gov.au_fish_benthos_
 GBR_Sites_Processed_1999 <- read.csv("./Data/Processed/data.gov.au_fish_benthos_GBR_sites_1999_processed.csv")
 GBR_Sites_Processed_2004_fish_lme <- read.csv("./Data/Processed/data.gov.au_fish_lme_2004_processed.csv")
 
+#Changing year to a factor
 GBR_Sites_Processed_2004$Year <- as.factor(GBR_Sites_Processed_2004$Year)
 GBR_Sites_Processed_1999$Year <- as.factor(GBR_Sites_Processed_1999$Year)
 GBR_Sites_Processed_2004_fish_lme$Year <- as.factor(GBR_Sites_Processed_2004_fish_lme$Year)
@@ -53,17 +54,17 @@ GBR_Sites_Processed_2004_fish_lme$Year <- as.factor(GBR_Sites_Processed_2004_fis
 
 # Rationale and Research Questions
 
-As the demand for seafood products has increased over the last six decades, unsustainable fishing, which can result from both illegal fishing practices as well as poor fisheries management, has been increasingly recognized as a pressing problem (FAO 2018). Coral reef fisheries are especially subject to unsustainability because of increasing coastal populations and the expansion of markets for live coral reef fishes (Pauly et al. 2002; Bellwood et al. 2004). Reef fish overexploitation affects the reef community as a whole -- for example, the targeting of large, predatory reef fish at high trophic levels can alter and destablize the structure of reef communities (Pauly et al. 2002; Bellwood et al. 2004; Newton et al. 2007). The negative effects of overfishing on reef ecosystems -- along with other coral stressors such as climate change, ocean acidification, and nutrient pollution -- continue to impact fish communities through the deterioration of coral, the domination of macroalgae, and decreases in reef structural complexity (Bellwood et al. 2004; Darling et al. 2017).
+As the demand for seafood products has increased over the last six decades, unsustainable fishing, which can result from both illegal fishing practices and poor fisheries management, has been increasingly recognized as a pressing problem (FAO 2018). Coral reef fisheries have been found to be especially unsustainable because of the nutrition demands of increasing coastal populations and the expansion of markets for live coral reef fishes (Pauly et al. 2002; Bellwood et al. 2004). Reef fish overexploitation affects the reef ecosystem as a whole -- for example, the targeting of large, predatory reef fishes at high trophic levels can alter and destablize the reef community structure (Pauly et al. 2002; Bellwood et al. 2004; Newton et al. 2007). The negative effects of overfishing on reef ecosystems -- along with other stressors such as climate change, ocean acidification, and nutrient pollution -- continue to impact fish communities through the deterioration of coral, the domination of macroalgae, and decreases in reef structural complexity (Bellwood et al. 2004; Darling et al. 2017).
 
-The use of no-take marine reserves to conserve reef communities and manage fishing impacts has increased over the last two decades and have shown to be effective tools that are capable of increasing fish density, fish species richness, and coral abundance and health (Williamson et al. 2004; Lester et al. 2009; Castro-Sanguino et al. 2017). Australia's Great Barrier Reef is the largest coral reef system in the world, and, like other reefs worldwide, is exhibiting signs of system-wide degradation (Bellwood et al. 2004; Fraser et al. 2017). Zoning was first introduced into the Great Barrier Reef Marine Park (GBRMP) between 1981-1988, and a new zoning management plan was implemented in 2004 (Williamson et al. 2004; Castro-Sanguino et al. 2017).
+The use of no-take marine reserves to conserve reef communities and manage fishing impacts has increased over the last twenty years, and they have shown to be effective tools that are capable of increasing fish density, fish species richness, and coral abundance and health (Williamson et al. 2004; Lester et al. 2009; Castro-Sanguino et al. 2017). Australia's Great Barrier Reef is the largest coral reef system in the world, and, like other reefs worldwide, it is exhibiting signs of system-wide degradation (Bellwood et al. 2004; Fraser et al. 2017). Zones, including no-take zones, were first introduced into the Great Barrier Reef Marine Park (GBRMP) between 1981 and 1988. A new zoning management plan was later implemented in 2004 (Williamson et al. 2004; Castro-Sanguino et al. 2017).
 
-To examine the effects of GBRMP zoning practices on fish density, fish species richness, and coral abundance, as well as to determine what variables impact fish density and coral abundance, a dataset with varibles concerning zones, fish and coral abundance, and the abundance of specific fish functional groups was selected -- the chosen dataset is one of the few projects established with the goal of specifically assessing the ecological effects of multiple-use zoning on the inshore coral reefs of the GBRMP (Lawrey 2014). Choice of dataset was also influenced by timespan -- this project is the only long-term monitoring project with a dataset that was established prior to the implementation of the new zoning management plan in 2004 (Lawrey 2014).
+To examine the effects of GBRMP zoning practices on fish density, fish species richness, and coral abundance, as well as to determine what variables impact fish density and coral abundance, a dataset with these variables was selected. The chosen dataset was compiled with the goal of specifically assessing the ecological effects of multiple-use zoning on the inshore coral reefs of the GBRMP (Lawrey 2014). Choice of dataset was also influenced by timespan -- the project formed to collect this data is the only long-term monitoring project with a dataset that was established prior to the implementation of the 2004 zoning management plan (Lawrey 2014).
 
 This project sought to answer the following questions about the inshore coral reefs of the GBRMP:
 
-1. What variables affect the percentage cover of live hard coral?
-2. What variables affect fish density?
-3. Do no-take zones established in 1987, no-take zones established in 2004, and fished zones have different mean amounts of live hard coral cover, fish density, and fish species richness?
+1. What variables affect the percent coverage of living hard coral?
+2. What variables affect total fish density?
+3. Do no-take zones established in 1987, no-take zones established in 2004, and fished zones have different mean amounts of living hard coral cover, total fish density, and fish species richness?
 
 \newpage
 
@@ -71,23 +72,24 @@ This project sought to answer the following questions about the inshore coral re
 
 ## Database Information
 
-Data were originally collected by by the ARC Centre of Excellence for Coral Reef Studies at James Cook University. They were accessed via the Australian government's database for open government data, data.gov.au: https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69
+Data were originally collected by by the ARC Centre of Excellence for Coral Reef Studies at James Cook University. They were accessed via the Australian government's database for open government data, data.gov.au (`https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69`),
+and were hosted in the eAtlas data repository (`http://eatlas.org.au/pydio/data/public/833ece.php`() 
 
-Data files were hosted in the eAtlas data repository: http://eatlas.org.au/pydio/data/public/833ece.php 
-
-More information on data.gov.au can be found here: https://search.data.gov.au/page/about
-
-More information on eAtlas can be found here: https://eatlas.org.au/content/about-e-atlas
+More information on data.gov.au can be found at `https://search.data.gov.au/page/about`, and more information on eAtlas can be found at `https://eatlas.org.au/content/about-e-atlas`.
 
 Data were accessed 2020-04-10.
 
 ## Data Wrangling
 
-From the downloaded dataset, the `E-Atlas Data_NERP 8.2_Dec 2014_fish_benthos.xlsx` file contained two sheets; the first gave data averaged by site and was saved in the repository as `data.gov.au_fish_benthos_GBR_sites_raw.csv` for wrangling and analysis. Three processed files were created from this dataset. To create the first processed file, `data.gov.au_fish_benthos_GBR_sites_1999_processed.csv`, the variables listed in the table below were first selected. Then, rows with known outliers -- mean live total coral percent cover and mean live hard coral percent cover values that were greater than 100 -- were filtered out of the dataset. The second processed file, `data.gov.au_fish_benthos_GBR_sites_2004_processed.csv`, was created using the same steps plus an additional one: all rows with values of `na` were omitted from the data. This gave a processed dataset containing data starting in 2004 rather than 1999. The final processed file, `data.gov.au_fish_lme_2004_processed.csv`, was created during data analysis; a column containing predicted values based on a mixed-effects linear model was added to `data.gov.au_fish_benthos_GBR_sites_2004_processed.csv` to allow the creating of a graph containing trend lines based on the model.
+The `E-Atlas Data_NERP 8.2_Dec 2014_fish_benthos.xlsx` file in the downloaded dataset contained two sheets; the first gave data averaged by site and was saved in the repository as `data.gov.au_fish_benthos_GBR_sites_raw.csv` for wrangling and analysis. Three processed files were created from this dataset. To create the first processed file, `data.gov.au_fish_benthos_GBR_sites_1999_processed.csv`, the variables listed in the Metadata table below were first selected. Then, rows with known outliers -- mean live total coral percent cover and mean live hard coral percent cover values that were greater than 100 -- were filtered out of the dataset. The second processed file, `data.gov.au_fish_benthos_GBR_sites_2004_processed.csv`, was created using the same steps plus an additional one: all rows with values of `na` were omitted from the data. This gave a processed dataset containing data starting in 2004 rather than 1999 (data for some variables was only collected after 2004). The final processed file, `data.gov.au_fish_lme_2004_processed.csv`, was created during data analysis; a column containing predicted values based on a mixed-effects linear model was added to `data.gov.au_fish_benthos_GBR_sites_2004_processed.csv` to allow the construction of a graph containing trend lines based on the model.
 
 ## Metadata
 
-These data, which were collected between 1999 and 2014 on the inshore coral reefs of the Great Barrier Reef Marine Park, contain the average percent cover of major benthic categories as well as the average density of fish functional groups. Underwater visual census (UVC) methodology was used to survey these fish and benthic communities. Within each site, UVC surveys were conducted using 5 replicate transects (each 50m x 6m) deployed on the reef slope between approximately 4 and 12 meters. Due to funding limitations and unpredictable weather events, there were some years where data was not collected. Data concerning fish species (Total Fish Densit_mean, Fish Species richness_mean, Grazers_mean, Corallivores_mean) began being collected in 2004.
+These data, which were collected between 1999 and 2014 on the inshore coral reefs of the GBRMP, contain the average percent cover of major benthic categories as well as the average density of fish functional groups. Underwater visual census (UVC) methodology was used to survey these fish and benthic communities. Within each site, UVC surveys were conducted using 5 replicate transects (each 50m x 6m) deployed on the reef slope between approximately 4 and 12 meters. Due to funding limitations and unpredictable weather events, there were some years where data was not collected. Fish species data (Total Fish Densit_mean, Fish Species richness_mean, Grazers_mean, Corallivores_mean) was collected starting in 2004.
+
+\ 
+\ 
+\ 
 
 Dataset Column | Description | Class
 ---------------| ----------- | -----
@@ -104,12 +106,11 @@ Dataset Column | Description | Class
 **LHC_mean** | Mean live hard coral % cover | Numeric
 **MAC_mean** | Mean macroalgae % cover (includes only fleshy algae, not turf algae) | Numeric
 
-
 \newpage
 
 # Exploratory Analysis 
 
-Although data began being collected in 1999, some data related to fish species density and richness, as well as other fish related data, did not begin being monitored until 2004. Although some viable data will have to be removed in analyses where fish data are involved, there appears to be similar proportions of zone types when looking at data from 1999-2014 and 2004-2014 (Figure 1).
+Although data collection began in 1999, some data related to fish species density and richness, as well as other fish related data, was not collected until 2004. While some viable data for other variables will have to be removed in analyses when fish data are involved, there appear to be similar proportions of fished zones and no-take 1987 zones in the full and filtered datasets, indicating that filtering will not cause the data from one zone to be eliminated or reduced (Figure 1).
   
 ```{r Zone Exploratory Plot, echo = FALSE, fig.align = "center", fig.cap = "The number of fished zones, no-take zones established in 1987, and no-take zones established in 2004 when data from 1999-2014 are included (bottom) and data from only 2004-2014 are included (top)."}
 zones_1999_explore <- ggplot(GBR_Sites_Processed_1999) + aes(x = Zone) +
@@ -129,7 +130,7 @@ plot_grid(zones_2004_explore, zones_1999_explore, align = "v", ncol = 1,
   
 ``` 
 
-In looking at the frequency of macroalgae and coral percent cover from 1999-2014, macroalgae frequently has 0% cover while live coral most frequently has coverage percentages around 40 (Figure 2); these frequencies indicate that many of the sites sampled remain dominated by coral rather than macroalgae. In examining the relationship between living coral and macroalge further, it appears that mean fleshy macroalge percent cover is negatively correlated with mean living hard coral percent cover (Figure 3).
+When examining the frequency of macroalgae and coral percent cover from 1999-2014, macroalgae often has 0% cover while live coral most frequently has coverage percentages around 40 (Figure 2); these values indicate that many of the sampled sites may remain dominated by coral rather than macroalgae. In looking at the relationship between living coral and macroalge further, it appears that mean fleshy macroalge percent cover is negatively correlated with mean living hard coral percent cover (Figure 3).
 
 ```{r Coral Algae Exploratory Plot, echo = FALSE, message = FALSE, fig.align = "center", fig.cap = "Frequency of fleshy macroalgae percent cover compared to living hard coral percent cover (1999-2014)."}
 
@@ -151,7 +152,9 @@ coral_mac_scatter <- ggplot(GBR_Sites_Processed_1999) +
 print(coral_mac_scatter)
 ```
 
-When examining mean fish density and mean percent live hard coral across 2004-2014, it appears as though fish density has the smallest range in 2004 and 2012-2014 (Figure 4). From 2011-2014, coral coverage has been low compared to 2009, although it has consistently reached values of above 50% (Figure 4). Coral cover appears as though it could be slightly positively correlated with fish density (Figure 5).
+\newpage
+
+In looking at mean fish density and mean percent live hard coral cover across 2004-2014, it appears as though fish density has the smallest ranges in 2004 and 2012-2014 (Figure 4). From 2011-2014, coral coverage has been low compared to 2009, although it has consistently reached values above 50% (Figure 4). Coral percent cover seems as though it could be slightly positively correlated with fish density (Figure 5).
 
 ```{r Coral Fish Exploratory Plots, echo = FALSE, fig.align = "center", fig.cap = "Mean live hard coral percent cover and mean total fish density across 2004, 2006-2009, and 2011-2014."}
 
@@ -184,16 +187,28 @@ print(coral_fish_scatter)
 
 # Analysis
 
-## Question 1: What variables affect the percentage cover of live hard coral on the inshore coral reefs of the GBRMP?
+## Question 1: What variables affect the percent coverage of living hard coral on the inshore coral reefs of the GBRMP?
 
-To determine factors influencing live hard coral cover within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To account for the random effects of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise Akaike information criterion (AIC) analysis, contained the explanatory variables of year, the mean number of grazer fish species, the mean number of corallivore fish species, and the mean percentage cover of fleshy macroalgae. Year, the mean number of grazer fish species, the mean percentage cover of fleshy macroalgae significantly decrease the mean percentage of live hard coral cover, while the mean number of corallivore fish species significantly increase the mean percentage of live hard coral cover (pseudo R^2^ = 0.8078; Figures 6 & 7). When all other variables are held constant, each additional fish included in the mean number of grazers will decrease mean live hard coral percent cover by 0.0227% (df = 358, t = -2.805, p < 0.05). Similarly, a one unit increase in the mean macroalgae percent cover will decrease mean live hard coral percent cover by 0.354% (df = 358, t = 7.641, p < 0.0001), while a one unit increase in the mean number of corallivores will increase mean live hard coral percent cover by 0.265% (df = 358, t = 7.812, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figures 6 & 7). 
+To determine factors influencing live hard coral cover within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To account for the random effect of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise Akaike information criterion (AIC) analysis, contained the explanatory variables of year, mean number of grazer fish species, mean number of corallivore fish species, and mean percentage cover of fleshy macroalgae. Year, the mean number of grazer fish species, and the mean percentage cover of fleshy macroalgae significantly decrease the mean percentage of live hard coral cover, while the mean number of corallivore fish species significantly increase it (pseudo R^2^ = 0.8078; Figures 6 & 7). When all other variables are held constant, each additional fish included in the mean number of grazers will decrease mean live hard coral percent cover by 0.0227% (df = 358, t = -2.805, p < 0.05). Similarly, a one unit increase in the mean macroalgae percent cover will decrease mean live hard coral percent cover by 0.354% (df = 358, t = 7.641, p < 0.0001), while a one unit increase in the mean number of corallivores will increase mean live hard coral percent cover by 0.265% (df = 358, t = 7.812, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships. Differences in letters between years indicate statistical differences.
+
+Year | Statistical Group
+-----| -----------------
+2004 | cd 
+2006 | bc
+2007 | bc 
+2008 | bd 
+2009 | d 
+2011 | a 
+2012 | b 
+2013 | a 
+2014 | bc
 
 ``` {r Coral Percent Cover Model, include = FALSE}
 LHC_mixed_final <- lme(data = GBR_Sites_Processed_2004, LHC_mean ~ Year + Grazers_mean + 
                          Corallivores_mean + MAC_mean, random = ~1|Site, method = "ML")
 ```
 
-```{r Coral Percent Cover Plot (Corallivores), echo = FALSE, fig.align = "center", fig.height = 7, fig.width = 6, fig.cap = "Modeled relationship between the mean number of corallivore fish species, the mean percent cover of living hard coral, and the mean percent cover of fleshy macroalgae for 2004, 2006-2009, and 2011-2014. The mean number of grazer fish species was also included in the model (Figure ).Regression lines are plotted using using the mean number of grazer species and the mean percent cover of fleshy macroalgae for the year corresponding to the facet."}
+```{r Coral Percent Cover Plot (Corallivores), echo = FALSE, fig.align = "center", fig.height = 7, fig.width = 6, fig.cap = "Modeled relationship between the mean number of corallivore fish species, the mean percent cover of living hard coral, and the mean percent cover of fleshy macroalgae for 2004, 2006-2009, and 2011-2014. The mean number of grazer fish species was also included in the model (Figure 7). Regression lines are plotted using using the mean number of grazer species and the mean percent cover of fleshy macroalgae for the year corresponding to the facet."}
 
 eq_2004_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
     fixef(LHC_mixed_final)[1] + 
@@ -283,7 +298,7 @@ print(LHC_corallivores_plot)
 
 ```
 
-```{r Coral Percent Cover Plot (Grazers), echo = FALSE, fig.align = "center", fig.height = 7, fig.width = 6, fig.cap = "Modeled relationship between the mean number of grazer fish species, the mean percent cover of living hard coral, and the mean percent cover of fleshy macroalgae for 2004, 2006-2009, and 2011-2014. The mean number of corallivore fish species was also included in the model (Figure ). Regression lines are plotted using using the mean number of corallivore species and the mean percent cover of fleshy macroalgae for the year corresponding to the facet."}
+```{r Coral Percent Cover Plot (Grazers), echo = FALSE, fig.align = "center", fig.height = 7, fig.width = 6, fig.cap = "Modeled relationship between the mean number of grazer fish species, the mean percent cover of living hard coral, and the mean percent cover of fleshy macroalgae for 2004, 2006-2009, and 2011-2014. The mean number of corallivore fish species was also included in the model (Figure 6). Regression lines are plotted using using the mean number of corallivore species and the mean percent cover of fleshy macroalgae for the year corresponding to the facet."}
 
 eq_2004_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
     fixef(LHC_mixed_final)[1] + 
@@ -373,10 +388,11 @@ print(LHC_grazers_plot)
 
 ```
 
+\newpage
 
-## Question 2: What variables affect fish density on the inshore coral reefs of the GBRMP?
+## Question 2: What variables affect total fish density on the inshore coral reefs of the GBRMP?
 
-To determine factors influencing mean total fish density within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To again account for the random effects of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise AIC analysis, contained the explanatory variables of year and mean percentage of live hard coral cover. The mean percentage of live hard coral cover was found to increase the natural log of mean total fish density (pseudo R^2^ = 0.8087; Figure 8). When all other variables are held constant, each additional 1% of live hard coral cover will increase the mean total fish density by 1.536% (df = 360, t = 7.429, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figure 8). 
+To determine factors influencing mean total fish density within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To account for the random effect of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise AIC analysis, contained the explanatory variables of year and mean percentage of live hard coral cover. The mean percentage of live hard coral cover was found to increase the natural log of mean total fish density (pseudo R^2^ = 0.8087; Figure 8). When all other variables are held constant, each additional 1% of live hard coral cover will increase the mean total fish density by 1.536% (df = 360, t = 7.429, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figure 8). 
 
 ```{r Fish Density Plot, echo = FALSE, fig.align = "center", fig.cap = "Modeled relationship between the mean percent cover of living hard coral and the natural log of fish density for 2004, 2006-2009, and 2011-2014. Letters indicating pairwise relationships among years are included in the legend; differences in letters between years indicate statistical differences."}
 
@@ -395,9 +411,9 @@ Fish_densit_plot <- ggplot(GBR_Sites_Processed_2004_fish_lme) +
 print(Fish_densit_plot)
 ```
 
-## Question 3: Do no-take zones established in 1987, no-take zones established in 2004, and fished zones have different mean amounts of live hard coral cover, fish density, and fish species richness?
+## Question 3: Do no-take zones established in 1987, no-take zones established in 2004, and fished zones have different mean amounts of living hard coral cover, total fish density, and fish species richness?
 
-To determine if mean fish density, mean fish species richness, and mean percent coral cover were significantly different among the three GBRMP zones in the data (no-take since 1987, no-take since 2004, and fished), three analysis of variance (ANCOVA) models were used. Zone was not found to significantly affect mean percent live coral cover (F~2,703~ = 0.1649, p > 0.1) or mean fish species richness (F~2,467~ = 2.396, p > 0.05). However, zone did significantly affect mean fish species density (F~2,467~ = 6.137, p < 0.01) with the no-take zones from 2004 increasing mean fish density by 39.780% (t = 3.171, p < 0.01). A post hoc Tukey test was used to evaluate pairwise relationships of different zones and extract groupings based on these pairwise relationships (Figure 9). 
+To determine if mean total fish density, mean fish species richness, and mean percent coral cover were significantly different among the three GBRMP zones in the data (no-take since 1987, no-take since 2004, and fished), three analysis of variance (ANCOVA) models were constructed. Zone was not found to significantly impact mean percent live coral cover (F~2,703~ = 0.1649, p > 0.1) or mean fish species richness (F~2,467~ = 2.396, p > 0.05). However, zone did significantly affect mean fish species density (F~2,467~ = 6.137, p < 0.01), with the no-take zones from 2004 increasing mean fish density by 39.780% (t = 3.171, p < 0.01). A post hoc Tukey test was used to evaluate pairwise relationships of different zones and extract groupings based on these pairwise relationships (Figure 9). 
 
 ```{r Zoning Plots, echo = FALSE, fig.height = 7, fig.width = 6, fig.align = "center", fig.cap = "Modeled relationship between the GBRMP zone and the mean percent cover of living hard coral from 1999-2014 (bottom), the natural log of fish density (middle) from 2004-2014, and fish species richness from 2004-2014 (top). Letters indicating pairwise relationships among zones are above each bar; differences in letters between zones indicate statistical differences."}
 #LHC
@@ -441,13 +457,13 @@ plot_grid(Fish_species_rich_plot, Fish_densit_zone_plot, LHC_zone_plot, ncol = 1
 
 # Summary and Conclusions
 
-• Major findings are summarized
-• Conclusions relate back to the original research context
+Based on these analyses, the percent coverage of living hard coral depends on several ecological factors -- it is negatively impacted by greater coverage of macroalgae as well as larger numbers of grazer fish species, and it is positively impacted by larger numbers of corallivore fish species. These effects of macroalgae align with previous research, as macroalgae has been consistently found to compete with corals for reef space (Bellwood et al. 2004). However, the effects that grazer and corallivore fish species have on coral coverage are unexpected -- grazers consumemacroalgae and keep its growth under control, while corallivores inflict damage on coral through consumption. One explanation for these effects could be that corallivores serve a dual purpose; perhaps they scrape algae off of coral in the process of consumption and these benefits overshadow any inflicted harm. It is also possible that the discovered relationships are actually flipped: corallivores may be attracted to areas with high amounts of coral coverage while grazers may be attracted to areas with high amounts of macroalgae coverage (and thus less coral). Year also affects living hard coral cover, and while data was not collected at a high enough resolution to examine clear trends over time, all years that significantly explained coral coverage decreased it in relation to 2004, indicating the possibility of a negative trend over time.
 
-Summarize your major findings from your analyses in a few paragraphs. What conclusions do you draw from your findings? Relate your findings back to the original research questions and rationale.
+Fewer variables significantly impacted the mean total fish density -- based on these analyses, more coral coverage increases fish density, and each additional 1% of live hard coral cover will raise the mean total fish density by 1.536%. This relationship hints at the profound effects that coral can have on reef fish communities; an increase coral coverage results in an even greater rise in fish density.
 
+Surprisingly, zone was not found to significantly affect mean percent live coral cover or mean fish species richness, despite the well-researched positive effects of no-take zones relative to fished zones (Williamson et al. 2004; Lester et al. 2009; Castro-Sanguino et al. 2017). While the mean fish species density in no-take zones established in 2004 differs markedly from fished zones -- no-take zones increase mean fish density by 39.780% -- it also differed from no-take zones established in 1987. However, it is possible that management of no-take zones in the 1980s and 1990s was quite different than management of these zones today, resulting in unexpected similarities between no-take zones established in 1987 zones and fished zones. While no effects of zone on coral coverage were found, it is possible changes in corals due to zone implementation will only be detectable over a longer time frame.
 
-
+These analyses confirmed the negative impacts of macroalgae on reefs as well as the positive effects of corals on reef fish communities. They also illuminated areas for future work; more research on the effects of marine zones and their management practices is necessary to understand the effects of GBRMP zones on reef and fish assemblages. Continuous future monitoring is also important to watch for detectable effects of management practices on coral reef communities.
 
 \newpage
 
