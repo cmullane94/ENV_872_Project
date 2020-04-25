@@ -94,6 +94,9 @@ summary(Fish_Densit_anova_log)
 Fish_Densit_anova_lm_log <- lm(data = GBR_Sites_Processed_2004, log(Total.Fish.Densit_mean) ~ Zone) 
 summary(Fish_Densit_anova_lm_log)
 
+#Interpreting the ZoneNTR 2004 coefficient in the context of the natural log transformed dependent variable
+(exp(coef(Fish_Densit_anova_lm_log)[3]) - 1) * 100
+
 #Checking model assumptions
 #Residuals vs. fitted line departs from zero; distribution of residuals is skewed
 par(mfrow = c(2, 2)) 

@@ -55,15 +55,6 @@ GBR_Sites_Processed_2004_fish_lme$Year <- as.factor(GBR_Sites_Processed_2004_fis
 
 # Rationale and Research Questions
 
-Write 1-2 paragraph(s) detailing the rationale for your study. This should include both the context of the topic as well as a rationale for your choice of dataset (reason for location, variables, etc.). You may choose to include citations if you like (optional).
-
-At the end of your rationale, introduce a numbered list of your questions (or an overarching question and sub-questions). 
-
-• Contains clear context for research topic
-• Contains rationale for dataset of choice
-• Contains one or more questions of an appropriate scope
-for the project
-
 As the demand for seafood products has increased over the last six decades, unsustainable fishing, which can result from both illegal fishing practices as well as poor fisheries management, has been increasingly recognized as a pressing problem (FAO 2018). Coral reef fisheries are especially subject to unsustainability because of increasing coastal populations and the expansion of markets for live coral reef fishes (Pauly et al. 2002; Bellwood et al. 2004). Reef fish overexploitation affects the reef community as a whole -- for example, the targeting of large, predatory reef fish at high trophic levels can alter and destablize the structure of reef communities (Pauly et al. 2002; Bellwood et al. 2004; Newton et al. 2007). The negative effects of overfishing on reef ecosystems -- along with other coral stressors such as climate change, ocean acidification, and nutrient pollution -- continue to impact fish communities through the deterioration of coral, the domination of macroalgae, and decreases in reef structural complexity (Bellwood et al. 2004; Darling et al. 2017).
 
 The use of no-take marine reserves to conserve reef communities and manage fishing impacts has increased over the last two decades and have shown to be effective tools that are capable of increasing fish density, fish species richness, and coral abundance and health (Williamson et al. 2004; Lester et al. 2009; Castro-Sanguino et al. 2017). Australia's Great Barrier Reef is the largest coral reef system in the world, and, like other reefs worldwide, is exhibiting signs of system-wide degradation (Bellwood et al. 2004; Fraser et al. 2017). Zoning was first introduced into the Great Barrier Reef Marine Park (GBRMP) between 1981-1988, and a new zoning management plan was implemented in 2004 (Williamson et al. 2004; Castro-Sanguino et al. 2017).
@@ -88,36 +79,91 @@ This project sought to answer the following questions about the inshore coral re
 
 # Exploratory Analysis 
 
-• Flow between text and visualizations is cohesive
-• Relevant exploratory information is visualized
+Although data began being collected in 1999, some data related to fish species density and richness, as well as other fish related data, did not begin being monitored until 2004. Although some viable data will have to be removed in analyses where fish data are involved, there appears to be similar proportions of zone types when looking at data from 1999-2014 and 2004-2014 (Figure 1).
+  
+```{r Zone Exploratory Plot, echo = FALSE, fig.align = "center", fig.cap = "The number of fished zones, no-take zones established in 1987, and no-take zones established in 2004 when data from 1999-2014 are included (bottom) and data from only 2004-2014 are included (top)."}
+zones_1999_explore <- ggplot(GBR_Sites_Processed_1999) + aes(x = Zone) +
+  geom_bar() +
+  labs(y = "Frequency") +
+  ylim(0, 450)
+
+zones_2004_explore <- ggplot(GBR_Sites_Processed_2004) + aes(x = Zone) +
+  geom_bar() +
+  labs(y = "Frequency") +
+  ylim(0, 300) +
+  theme(axis.title.x = element_blank(), axis.text.x = element_blank())
+
+plot_grid(zones_2004_explore, zones_1999_explore, align = "v", ncol = 1, 
+          labels = c("2004-2014", "1999-2014"), label_size = 14, hjust = -0.8, 
+          vjust = c(1.4, 1))
+  
+``` 
+
+In looking at the frequency of macroalgae and coral percent cover from 1999-2014, macroalgae frequently has 0% cover while live coral most frequently has coverage percentages around 40 (Figure 2); these frequencies indicate that many of the sites sampled remain dominated by coral rather than macroalgae. In examining the relationship between living coral and macroalge further, it appears that mean fleshy macroalge percent cover is negatively correlated with mean living hard coral percent cover (Figure 3).
+
+```{r Coral Algae Exploratory Plot, echo = FALSE, message = FALSE, fig.align = "center", fig.cap = "Frequency of fleshy macroalgae percent cover compared to living hard coral percent cover (1999-2014)."}
+
+LHC_MAC_explore <- ggplot(GBR_Sites_Processed_1999) +
+  geom_freqpoly(aes(x = LHC_mean, color = "Living hard coral")) + 
+  geom_freqpoly(aes(x = MAC_mean, color = "Fleshy macroalgae")) +
+  scale_color_viridis_d() +
+  labs(x = "Mean % cover", y = "Frequency", color = "")
+
+print(LHC_MAC_explore)
+  
+```
+
+```{r Coral Algae Scatter, echo = FALSE, fig.align = "center", fig.cap = "Mean fleshy macroalgae percent cover plotted against mean live hard coral percent cover (1999-2014)."}
+coral_mac_scatter <- ggplot(GBR_Sites_Processed_1999) + 
+  aes(x = MAC_mean, y = LHC_mean) +
+  geom_point() + 
+  labs(y = "Mean live hard coral % cover", x = "Mean fleshy macroalgae % cover")
+print(coral_mac_scatter)
+```
+
+When examining mean fish density and mean percent live hard coral across 2004-2014, it appears as though fish density has the smallest range in 2004 and 2012-2014 (Figure 4). From 2011-2014, coral coverage has been low compared to 2009, although it has consistently reached values of above 50% (Figure 4). Coral cover appears as though it could be slightly positively correlated with fish density (Figure 5).
+
+```{r Coral Fish Exploratory Plots, echo = FALSE, fig.align = "center", fig.cap = "Mean live hard coral percent cover and mean total fish density across 2004, 2006-2009, and 2011-2014."}
+
+LHC_year_explore <- ggplot(GBR_Sites_Processed_2004) + aes(x = Year, y = LHC_mean) +
+  geom_point() +
+  labs(y = "Mean live hard coral % cover") +
+  theme(axis.title.y = element_text(size = 9))
+  
+Fish_year_explore <- ggplot(GBR_Sites_Processed_2004) + 
+  aes(x = Year, y = Total.Fish.Densit_mean) +
+  geom_point() +
+  labs(y = expression('Mean total fish density (per 1000 m'^"2"*')')) +
+  theme(axis.title.x = element_blank(), axis.text.x = element_blank(), 
+        axis.title.y = element_text(size = 9))
+         
+plot_grid(Fish_year_explore, LHC_year_explore, align = "v", ncol = 1)
+
+```
+
+```{r Coral Fish Scatter, echo = FALSE, fig.align = "center", fig.cap = "Mean live hard coral percent cover plotted against mean total fish density (2004-2014)."}
+coral_fish_scatter <- ggplot(GBR_Sites_Processed_2004) + 
+  aes(x = LHC_mean, y = Total.Fish.Densit_mean) +
+  geom_point() + 
+  labs(x = "Mean live hard coral % cover", 
+       y = expression('Mean total fish density (per 1000 m'^"2"*')'))
+print(coral_fish_scatter)
+```
 
 \newpage
 
 # Analysis
 
-• Flow between text and visualizations is cohesive
-• Visualizations and statistical tests pertain directly to
-specific questions
-• Statistical results are reported in plain language with
-relevant statistical output in parentheses
-• Findings are reported clearly in relation to research
-questions
-
-Insert visualizations and text describing your main analyses. Format your R chunks so that graphs are displayed but code and other output is not displayed. Instead, describe the results of any statistical tests in the main text (e.g., "Variable x was significantly different among y groups (ANOVA; df = 300, F = 5.55, p < 0.0001)"). Each paragraph, accompanied by one or more visualizations, should describe the major findings and how they relate to the question and hypotheses. Divide this section into subsections, one for each research question.
-
-Each figure should be accompanied by a caption, and each figure should be referenced within the text.
-
-
 ## Question 1: What variables affect the percentage cover of live hard coral on the inshore coral reefs of the GBRMP?
 
-To determine factors influencing live hard coral cover within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To account for the random effects of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise Akaike information criterion (AIC) analysis, contained the explanatory variables of year, the mean number of grazer fish species, the mean number of corallivore fish species, and the mean percentage cover of fleshy macroalgae. Year, the mean number of grazer fish species, the mean percentage cover of fleshy macroalgae significantly decrease the mean percentage of live hard coral cover, while the mean number of corallivore fish species significantly increase the mean percentage of live hard coral cover (pseudo R^2^ = 0.8078; Figures...). When all other variables are held constant, each additional fish included in the mean number of grazers will decrease mean live hard coral percent cover by 0.0227% (df = 358, t = -2.805, p < 0.05). Similarly, a one unit increase in the mean macroalgae percent cover will decrease mean live hard coral percent cover by 0.354% (df = 358, t = 7.641, p < 0.0001), while a one unit increase in the mean number of corallivores will increase mean live hard coral percent cover by 0.265% (df = 358, t = 7.812, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figures...). 
+To determine factors influencing live hard coral cover within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To account for the random effects of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise Akaike information criterion (AIC) analysis, contained the explanatory variables of year, the mean number of grazer fish species, the mean number of corallivore fish species, and the mean percentage cover of fleshy macroalgae. Year, the mean number of grazer fish species, the mean percentage cover of fleshy macroalgae significantly decrease the mean percentage of live hard coral cover, while the mean number of corallivore fish species significantly increase the mean percentage of live hard coral cover (pseudo R^2^ = 0.8078; Figures 6 & 7). When all other variables are held constant, each additional fish included in the mean number of grazers will decrease mean live hard coral percent cover by 0.0227% (df = 358, t = -2.805, p < 0.05). Similarly, a one unit increase in the mean macroalgae percent cover will decrease mean live hard coral percent cover by 0.354% (df = 358, t = 7.641, p < 0.0001), while a one unit increase in the mean number of corallivores will increase mean live hard coral percent cover by 0.265% (df = 358, t = 7.812, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figures 6 & 7). 
 
 ``` {r Coral Percent Cover Model, include = FALSE}
 LHC_mixed_final <- lme(data = GBR_Sites_Processed_2004, LHC_mean ~ Year + Grazers_mean + 
                          Corallivores_mean + MAC_mean, random = ~1|Site, method = "ML")
 ```
 
-```{r Coral Percent Cover Plot (Corallivores), echo = FALSE, fig.align = "left", fig.cap = "Modeled relationship between the mean number of corallivore fish species, the mean percent cover of living hard coral, and the mean percent cover of fleshy macroalgae for 2004, 2006-2009, and 2011-2014. The mean number of grazer fish species was also included in the model (Figure ).Regression lines are plotted using using the mean number of grazer species and the mean percent cover of fleshy macroalgae for the year corresponding to the facet."}
+```{r Coral Percent Cover Plot (Corallivores), echo = FALSE, fig.align = "center", fig.height = 7, fig.width = 6, fig.cap = "Modeled relationship between the mean number of corallivore fish species, the mean percent cover of living hard coral, and the mean percent cover of fleshy macroalgae for 2004, 2006-2009, and 2011-2014. The mean number of grazer fish species was also included in the model (Figure ).Regression lines are plotted using using the mean number of grazer species and the mean percent cover of fleshy macroalgae for the year corresponding to the facet."}
 
 eq_2004_coral <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[11] * x + 
     fixef(LHC_mixed_final)[1] + 
@@ -207,7 +253,7 @@ print(LHC_corallivores_plot)
 
 ```
 
-```{r Coral Percent Cover Plot (Grazers), echo = FALSE, fig.align = "left", fig.cap = "Modeled relationship between the mean number of grazer fish species, the mean percent cover of living hard coral, and the mean percent cover of fleshy macroalgae for 2004, 2006-2009, and 2011-2014. The mean number of corallivore fish species was also included in the model (Figure ). Regression lines are plotted using using the mean number of corallivore species and the mean percent cover of fleshy macroalgae for the year corresponding to the facet."}
+```{r Coral Percent Cover Plot (Grazers), echo = FALSE, fig.align = "center", fig.height = 7, fig.width = 6, fig.cap = "Modeled relationship between the mean number of grazer fish species, the mean percent cover of living hard coral, and the mean percent cover of fleshy macroalgae for 2004, 2006-2009, and 2011-2014. The mean number of corallivore fish species was also included in the model (Figure ). Regression lines are plotted using using the mean number of corallivore species and the mean percent cover of fleshy macroalgae for the year corresponding to the facet."}
 
 eq_2004_grazer <- with(GBR_Sites_Processed_2004, function(x){fixef(LHC_mixed_final)[10] * x + 
     fixef(LHC_mixed_final)[1] + 
@@ -300,9 +346,9 @@ print(LHC_grazers_plot)
 
 ## Question 2: What variables affect fish density on the inshore coral reefs of the GBRMP?
 
-To determine factors influencing mean total fish density within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To again account for the random effects of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise AIC analysis, contained the explanatory variables of year and mean percentage of live hard coral cover. The mean percentage of live hard coral cover was found to increase the natural log of mean total fish density (pseudo R^2^ = 0.8087; Figure...). When all other variables are held constant, each additional 1% of live hard coral cover will increase the mean total fish density by 1.536% (df = 360, t = 7.429, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figure...). 
+To determine factors influencing mean total fish density within the GBRMP, a mixed-effects analysis of covariance (ANCOVA) model was used. To again account for the random effects of study site and allow extrapolation of results to potential study sites not included in the data, site was included as a random effect. The best-fitting model, which was found using stepwise AIC analysis, contained the explanatory variables of year and mean percentage of live hard coral cover. The mean percentage of live hard coral cover was found to increase the natural log of mean total fish density (pseudo R^2^ = 0.8087; Figure 8). When all other variables are held constant, each additional 1% of live hard coral cover will increase the mean total fish density by 1.536% (df = 360, t = 7.429, p < 0.0001). A post hoc Tukey test was used to evaluate pairwise relationships of different years and extract groupings based on these pairwise relationships (Figure 8). 
 
-```{r Fish Density Plot, echo = FALSE, fig.align = "left", fig.cap = "Modeled relationship between the mean percent cover of living hard coral and the natural log of fish density for 2004, 2006-2009, and 2011-2014."}
+```{r Fish Density Plot, echo = FALSE, fig.align = "center", fig.cap = "Modeled relationship between the mean percent cover of living hard coral and the natural log of fish density for 2004, 2006-2009, and 2011-2014. Letters indicating pairwise relationships among years are included in the legend; differences in letters between years indicate statistical differences."}
 
 Fish_densit_plot <- ggplot(GBR_Sites_Processed_2004_fish_lme) + 
   aes(y = log(Total.Fish.Densit_mean), x = LHC_mean, color = Year) +
@@ -321,9 +367,9 @@ print(Fish_densit_plot)
 
 ## Question 3: Do no-take zones established in 1987, no-take zones established in 2004, and fished zones have different mean amounts of live hard coral cover, fish density, and fish species richness?
 
-To determine if mean fish density, mean fish species richness, and mean percent coral cover were significantly different among the three GBRMP zones in the data (no-take since 1987, no-take since 2004, and fished), three analysis of variance (ANCOVA) models were used. Zone was not found to significantly affect mean percent live coral cover (F~2, 703~ = 0.1649, p > 0.1) or mean fish species richness (F~2, 467~ = 2.396, p > 0.05). However, zone did significantly affect mean fish species density (F~2, 467~ = 6.137, p < 0.01) with the no-take zones from 2004 increasing mean fish density by 39.780% (t = 3.171, p < 0.01). A post hoc Tukey test was used to evaluate pairwise relationships of different zones and extract groupings based on these pairwise relationships (Figure...). 
+To determine if mean fish density, mean fish species richness, and mean percent coral cover were significantly different among the three GBRMP zones in the data (no-take since 1987, no-take since 2004, and fished), three analysis of variance (ANCOVA) models were used. Zone was not found to significantly affect mean percent live coral cover (F~2, 703~ = 0.1649, p > 0.1) or mean fish species richness (F~2, 467~ = 2.396, p > 0.05). However, zone did significantly affect mean fish species density (F~2, 467~ = 6.137, p < 0.01) with the no-take zones from 2004 increasing mean fish density by 39.780% (t = 3.171, p < 0.01). A post hoc Tukey test was used to evaluate pairwise relationships of different zones and extract groupings based on these pairwise relationships (Figure 9). 
 
-```{r Zoning Plots, echo = FALSE, fig.align = "left", fig.cap = "Modeled relationship between the mean percent cover of living hard coral and the natural log of fish density for 2004, 2006-2009, and 2011-2014."}
+```{r Zoning Plots, echo = FALSE, fig.height = 7, fig.width = 6, fig.align = "center", fig.cap = "Modeled relationship between the GBRMP zone and the mean percent cover of living hard coral from 1999-2014 (bottom), the natural log of fish density (middle) from 2004-2014, and fish species richness from 2004-2014 (top). Letters indicating pairwise relationships among zones are above each bar; differences in letters between zones indicate statistical differences."}
 #LHC
 LHC_zone_plot <- ggplot(GBR_Sites_Processed_1999) +
   aes(x = Zone, y = LHC_mean) +
@@ -332,7 +378,7 @@ LHC_zone_plot <- ggplot(GBR_Sites_Processed_1999) +
                label = c("a", "a", "a")) +
   ylim(0, 100) +
   labs(y = "Mean live hard coral % cover") +
-  theme(axis.title.y = element_text(size = 10))
+  theme(axis.title.y = element_text(size = 9))
 
 #Fish density
 Fish_densit_zone_plot <- ggplot(GBR_Sites_Processed_2004) +
@@ -340,10 +386,10 @@ Fish_densit_zone_plot <- ggplot(GBR_Sites_Processed_2004) +
   geom_boxplot() +
   stat_summary(geom = "text", fun.y = max, vjust = -1, size = 3.5,
                label = c("b", "b", "a")) +
-  ylim(4.5, 11) +
+  ylim(4.5, 12) +
   labs(y = expression('Ln mean total fish density (per 1000 m'^"2"*')')) +
   theme(axis.title.x = element_blank(), axis.text.x = element_blank(),
-        axis.title.y = element_text(size = 10))
+        axis.title.y = element_text(size = 9))
 
 #Fish species richness
 Fish_species_rich_plot <- ggplot(GBR_Sites_Processed_2004) +
@@ -354,10 +400,10 @@ Fish_species_rich_plot <- ggplot(GBR_Sites_Processed_2004) +
   ylim(5, 51) +
   labs(y = "Mean number of fish species observed") +
   theme(axis.title.x = element_blank(), axis.text.x = element_blank(),
-              axis.title.y = element_text(size = 10))
+              axis.title.y = element_text(size = 9))
 
 #Plotting all three graphs in one plot
-plot_grid(Fish_species_rich_plot, Fish_densit_zone_plot, LHC_zone_plot, ncol = 1)
+plot_grid(Fish_species_rich_plot, Fish_densit_zone_plot, LHC_zone_plot, ncol = 1, align = "v", rel_heights = c(1, 1, 1))
 
 
 ```

@@ -30,46 +30,6 @@
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -142,18 +102,6 @@ zones on the inshore coral reefs of the Great Barrier Reef Marine Park}
 \section{Rationale and Research
 Questions}\label{rationale-and-research-questions}}
 
-Write 1-2 paragraph(s) detailing the rationale for your study. This
-should include both the context of the topic as well as a rationale for
-your choice of dataset (reason for location, variables, etc.). You may
-choose to include citations if you like (optional).
-
-At the end of your rationale, introduce a numbered list of your
-questions (or an overarching question and sub-questions).
-
-• Contains clear context for research topic • Contains rationale for
-dataset of choice • Contains one or more questions of an appropriate
-scope for the project
-
 As the demand for seafood products has increased over the last six
 decades, unsustainable fishing, which can result from both illegal
 fishing practices as well as poor fisheries management, has been
@@ -202,10 +150,9 @@ coral reefs of the GBRMP:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  What coral reef characterisitics and factors affect the percentage
-  cover of live hard coral?
+  What variables affect the percentage cover of live hard coral?
 \item
-  What coral reef characterisitics and factors affect fish density?
+  What variables affect fish density?
 \item
   Do no-take zones established in 1987, no-take zones established in
   2004, and fished zones have different mean amounts of live hard coral
@@ -226,31 +173,78 @@ structure
 \hypertarget{exploratory-analysis}{%
 \section{Exploratory Analysis}\label{exploratory-analysis}}
 
-• Flow between text and visualizations is cohesive • Relevant
-exploratory information is visualized
+Although data began being collected in 1999, some data related to fish
+species density and richness, as well as other fish related data, did
+not begin being monitored until 2004. Although some viable data will
+have to be removed in analyses where fish data are involved, there
+appears to be similar proportions of zone types when looking at data
+from 1999-2014 and 2004-2014 (Figure 1).
+
+\begin{figure}
+
+{\centering \includegraphics{Mullaney_ENV872_Project_files/figure-latex/Zone Exploratory Plot-1} 
+
+}
+
+\caption{The number of fished zones, no-take zones established in 1987, and no-take zones established in 2004 when data from 1999-2014 are included (bottom) and data from only 2004-2014 are included (top).}\label{fig:Zone Exploratory Plot}
+\end{figure}
+
+In looking at the frequency of macroalgae and coral percent cover from
+1999-2014, macroalgae frequently has 0\% cover while live coral most
+frequently has coverage percentages around 40 (Figure 2); these
+frequencies indicate that many of the sites sampled remain dominated by
+coral rather than macroalgae. In examining the relationship between
+living coral and macroalge further, it appears that mean fleshy
+macroalge percent cover is negatively correlated with mean living hard
+coral percent cover (Figure 3).
+
+\begin{figure}
+
+{\centering \includegraphics{Mullaney_ENV872_Project_files/figure-latex/Coral Algae Exploratory Plot-1} 
+
+}
+
+\caption{Frequency of fleshy macroalgae percent cover compared to living hard coral percent cover (1999-2014).}\label{fig:Coral Algae Exploratory Plot}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{Mullaney_ENV872_Project_files/figure-latex/Coral Algae Scatter-1} 
+
+}
+
+\caption{Mean fleshy macroalgae percent cover plotted against mean live hard coral percent cover (1999-2014).}\label{fig:Coral Algae Scatter}
+\end{figure}
+
+When examining mean fish density and mean percent live hard coral across
+2004-2014, it appears as though fish density has the smallest range in
+2004 and 2012-2014 (Figure 4). From 2011-2014, coral coverage has been
+low compared to 2009, although it has consistently reached values of
+above 50\% (Figure 4). Coral cover appears as though it could be
+slightly positively correlated with fish density (Figure 5).
+
+\begin{figure}
+
+{\centering \includegraphics{Mullaney_ENV872_Project_files/figure-latex/Coral Fish Exploratory Plots-1} 
+
+}
+
+\caption{Mean live hard coral percent cover and mean total fish density across 2004, 2006-2009, and 2011-2014.}\label{fig:Coral Fish Exploratory Plots}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{Mullaney_ENV872_Project_files/figure-latex/Coral Fish Scatter-1} 
+
+}
+
+\caption{Mean live hard coral percent cover plotted against mean total fish density (2004-2014).}\label{fig:Coral Fish Scatter}
+\end{figure}
 
 \newpage
 
 \hypertarget{analysis}{%
 \section{Analysis}\label{analysis}}
-
-• Flow between text and visualizations is cohesive • Visualizations and
-statistical tests pertain directly to specific questions • Statistical
-results are reported in plain language with relevant statistical output
-in parentheses • Findings are reported clearly in relation to research
-questions
-
-Insert visualizations and text describing your main analyses. Format
-your R chunks so that graphs are displayed but code and other output is
-not displayed. Instead, describe the results of any statistical tests in
-the main text (e.g., ``Variable x was significantly different among y
-groups (ANOVA; df = 300, F = 5.55, p \textless{} 0.0001)''). Each
-paragraph, accompanied by one or more visualizations, should describe
-the major findings and how they relate to the question and hypotheses.
-Divide this section into subsections, one for each research question.
-
-Each figure should be accompanied by a caption, and each figure should
-be referenced within the text.
 
 \hypertarget{question-1-what-variables-affect-the-percentage-cover-of-live-hard-coral-on-the-inshore-coral-reefs-of-the-gbrmp}{%
 \subsection{Question 1: What variables affect the percentage cover of
@@ -270,28 +264,32 @@ fish species, the mean percentage cover of fleshy macroalgae
 significantly decrease the mean percentage of live hard coral cover,
 while the mean number of corallivore fish species significantly increase
 the mean percentage of live hard coral cover (pseudo
-R\textsuperscript{2} = 0.8078; Figures\ldots{}). When all other
-variables are held constant, each additional fish included in the mean
-number of grazers will decrease mean live hard coral percent cover by
-0.0227\% (df = 358, t = -2.805, p \textless{} 0.05). Similarly, a one
-unit increase in the mean macroalgae percent cover will decrease mean
-live hard coral percent cover by 0.354\% (df = 358, t = 7.641, p
-\textless{} 0.0001), while a one unit increase in the mean number of
-corallivores will increase mean live hard coral percent cover by 0.265\%
-(df = 358, t = 7.812, p \textless{} 0.0001). A post hoc Tukey test was
-used to evaluate pairwise relationships of different years and extract
-groupings based on these pairwise relationships (Figures\ldots{}).
+R\textsuperscript{2} = 0.8078; Figures 6 \& 7). When all other variables
+are held constant, each additional fish included in the mean number of
+grazers will decrease mean live hard coral percent cover by 0.0227\% (df
+= 358, t = -2.805, p \textless{} 0.05). Similarly, a one unit increase
+in the mean macroalgae percent cover will decrease mean live hard coral
+percent cover by 0.354\% (df = 358, t = 7.641, p \textless{} 0.0001),
+while a one unit increase in the mean number of corallivores will
+increase mean live hard coral percent cover by 0.265\% (df = 358, t =
+7.812, p \textless{} 0.0001). A post hoc Tukey test was used to evaluate
+pairwise relationships of different years and extract groupings based on
+these pairwise relationships (Figures 6 \& 7).
 
 \begin{figure}
 
-\includegraphics{Mullaney_ENV872_Project_files/figure-latex/Coral Percent Cover Plot (Corallivores)-1} \hfill{}
+{\centering \includegraphics{Mullaney_ENV872_Project_files/figure-latex/Coral Percent Cover Plot (Corallivores)-1} 
+
+}
 
 \caption{Modeled relationship between the mean number of corallivore fish species, the mean percent cover of living hard coral, and the mean percent cover of fleshy macroalgae for 2004, 2006-2009, and 2011-2014. The mean number of grazer fish species was also included in the model (Figure ).Regression lines are plotted using using the mean number of grazer species and the mean percent cover of fleshy macroalgae for the year corresponding to the facet.}\label{fig:Coral Percent Cover Plot (Corallivores)}
 \end{figure}
 
 \begin{figure}
 
-\includegraphics{Mullaney_ENV872_Project_files/figure-latex/Coral Percent Cover Plot (Grazers)-1} \hfill{}
+{\centering \includegraphics{Mullaney_ENV872_Project_files/figure-latex/Coral Percent Cover Plot (Grazers)-1} 
+
+}
 
 \caption{Modeled relationship between the mean number of grazer fish species, the mean percent cover of living hard coral, and the mean percent cover of fleshy macroalgae for 2004, 2006-2009, and 2011-2014. The mean number of corallivore fish species was also included in the model (Figure ). Regression lines are plotted using using the mean number of corallivore species and the mean percent cover of fleshy macroalgae for the year corresponding to the facet.}\label{fig:Coral Percent Cover Plot (Grazers)}
 \end{figure}
@@ -310,18 +308,19 @@ which was found using stepwise AIC analysis, contained the explanatory
 variables of year and mean percentage of live hard coral cover. The mean
 percentage of live hard coral cover was found to increase the natural
 log of mean total fish density (pseudo R\textsuperscript{2} = 0.8087;
-Figure\ldots{}). When all other variables are held constant, each
-additional 1\% of live hard coral cover will increase the mean total
-fish density by 1.536\% (df = 360, t = 7.429, p \textless{} 0.0001). A
-post hoc Tukey test was used to evaluate pairwise relationships of
-different years and extract groupings based on these pairwise
-relationships (Figure\ldots{}).
+Figure 8). When all other variables are held constant, each additional
+1\% of live hard coral cover will increase the mean total fish density
+by 1.536\% (df = 360, t = 7.429, p \textless{} 0.0001). A post hoc Tukey
+test was used to evaluate pairwise relationships of different years and
+extract groupings based on these pairwise relationships (Figure 8).
 
 \begin{figure}
 
-\includegraphics{Mullaney_ENV872_Project_files/figure-latex/Fish Density Plot-1} \hfill{}
+{\centering \includegraphics{Mullaney_ENV872_Project_files/figure-latex/Fish Density Plot-1} 
 
-\caption{Modeled relationship between the mean percent cover of living hard coral and the natural log of fish density for 2004, 2006-2009, and 2011-2014.}\label{fig:Fish Density Plot}
+}
+
+\caption{Modeled relationship between the mean percent cover of living hard coral and the natural log of fish density for 2004, 2006-2009, and 2011-2014. Letters indicating pairwise relationships among years are included in the legend; differences in letters between years indicate statistical differences.}\label{fig:Fish Density Plot}
 \end{figure}
 
 \hypertarget{question-3-do-no-take-zones-established-in-1987-no-take-zones-established-in-2004-and-fished-zones-have-different-mean-amounts-of-live-hard-coral-cover-fish-density-and-fish-species-richness}{%
@@ -330,46 +329,29 @@ zones established in 2004, and fished zones have different mean amounts
 of live hard coral cover, fish density, and fish species
 richness?}\label{question-3-do-no-take-zones-established-in-1987-no-take-zones-established-in-2004-and-fished-zones-have-different-mean-amounts-of-live-hard-coral-cover-fish-density-and-fish-species-richness}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{#LHC}
-\NormalTok{LHC_zone_plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(GBR_Sites_Processed_}\DecValTok{1999}\NormalTok{) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Zone, }\DataTypeTok{y =}\NormalTok{ LHC_mean) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{() }\OperatorTok{+}
-\StringTok{  }\KeywordTok{stat_summary}\NormalTok{(}\DataTypeTok{geom =} \StringTok{"text"}\NormalTok{, }\DataTypeTok{fun.y =}\NormalTok{ max, }\DataTypeTok{vjust =} \DecValTok{-1}\NormalTok{, }\DataTypeTok{size =} \FloatTok{3.5}\NormalTok{,}
-               \DataTypeTok{label =} \KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"a"}\NormalTok{, }\StringTok{"a"}\NormalTok{)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{100}\NormalTok{) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \StringTok{"Mean live hard coral % cover"}\NormalTok{) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.title.y =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{10}\NormalTok{))}
+To determine if mean fish density, mean fish species richness, and mean
+percent coral cover were significantly different among the three GBRMP
+zones in the data (no-take since 1987, no-take since 2004, and fished),
+three analysis of variance (ANCOVA) models were used. Zone was not found
+to significantly affect mean percent live coral cover
+(F\textasciitilde{}2, 703\textasciitilde{} = 0.1649, p \textgreater{}
+0.1) or mean fish species richness (F\textasciitilde{}2,
+467\textasciitilde{} = 2.396, p \textgreater{} 0.05). However, zone did
+significantly affect mean fish species density (F\textasciitilde{}2,
+467\textasciitilde{} = 6.137, p \textless{} 0.01) with the no-take zones
+from 2004 increasing mean fish density by 39.780\% (t = 3.171, p
+\textless{} 0.01). A post hoc Tukey test was used to evaluate pairwise
+relationships of different zones and extract groupings based on these
+pairwise relationships (Figure 9).
 
-\CommentTok{#Fish density}
-\NormalTok{Fish_densit_zone_plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(GBR_Sites_Processed_}\DecValTok{2004}\NormalTok{) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Zone, }\DataTypeTok{y =} \KeywordTok{log}\NormalTok{(Total.Fish.Densit_mean)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{() }\OperatorTok{+}
-\StringTok{  }\KeywordTok{stat_summary}\NormalTok{(}\DataTypeTok{geom =} \StringTok{"text"}\NormalTok{, }\DataTypeTok{fun.y =}\NormalTok{ max, }\DataTypeTok{vjust =} \DecValTok{-1}\NormalTok{, }\DataTypeTok{size =} \FloatTok{3.5}\NormalTok{,}
-               \DataTypeTok{label =} \KeywordTok{c}\NormalTok{(}\StringTok{"b"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{ylim}\NormalTok{(}\FloatTok{4.5}\NormalTok{, }\DecValTok{11}\NormalTok{) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \KeywordTok{expression}\NormalTok{(}\StringTok{'Ln mean total fish density (per 1000 m'}\OperatorTok{^}\StringTok{"2"}\OperatorTok{*}\StringTok{')'}\NormalTok{)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.title.x =} \KeywordTok{element_blank}\NormalTok{(), }\DataTypeTok{axis.text.x =} \KeywordTok{element_blank}\NormalTok{(),}
-        \DataTypeTok{axis.title.y =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{10}\NormalTok{))}
+\begin{figure}
 
-\CommentTok{#Fish species richness}
-\NormalTok{Fish_species_rich_plot <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(GBR_Sites_Processed_}\DecValTok{2004}\NormalTok{) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Zone, }\DataTypeTok{y =}\NormalTok{ Fish.Species.richness_mean) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_boxplot}\NormalTok{() }\OperatorTok{+}
-\StringTok{  }\KeywordTok{stat_summary}\NormalTok{(}\DataTypeTok{geom =} \StringTok{"text"}\NormalTok{, }\DataTypeTok{fun.y =}\NormalTok{ max, }\DataTypeTok{vjust =} \DecValTok{-1}\NormalTok{, }\DataTypeTok{size =} \FloatTok{3.5}\NormalTok{,}
-               \DataTypeTok{label =} \KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"a"}\NormalTok{, }\StringTok{"a"}\NormalTok{)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{ylim}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{51}\NormalTok{) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \StringTok{"Mean number of fish species observed"}\NormalTok{) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.title.x =} \KeywordTok{element_blank}\NormalTok{(), }\DataTypeTok{axis.text.x =} \KeywordTok{element_blank}\NormalTok{(),}
-              \DataTypeTok{axis.title.y =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size =} \DecValTok{10}\NormalTok{))}
+{\centering \includegraphics{Mullaney_ENV872_Project_files/figure-latex/Zoning Plots-1} 
 
-\CommentTok{#Plotting all three graphs in one plot}
-\KeywordTok{plot_grid}\NormalTok{(Fish_species_rich_plot, Fish_densit_zone_plot, LHC_zone_plot, }\DataTypeTok{ncol =} \DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+}
 
-\includegraphics{Mullaney_ENV872_Project_files/figure-latex/Zoning Plots-1.pdf}
+\caption{Modeled relationship between the GBRMP zone and the mean percent cover of living hard coral from 1999-2014 (bottom), the natural log of fish density (middle) from 2004-2014, and fish species richness from 2004-2014 (top). Letters indicating pairwise relationships among zones are above each bar; differences in letters between zones indicate statistical differences.}\label{fig:Zoning Plots}
+\end{figure}
 \newpage
 
 \hypertarget{summary-and-conclusions}{%
