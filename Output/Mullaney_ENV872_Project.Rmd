@@ -72,10 +72,10 @@ This project sought to answer the following questions about the inshore coral re
 
 ## Database Information
 
-Data were originally collected by by the ARC Centre of Excellence for Coral Reef Studies at James Cook University. They were accessed via the Australian government's database for open government data, data.gov.au (`https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69`),
-and were hosted in the eAtlas data repository (`http://eatlas.org.au/pydio/data/public/833ece.php`() 
+Data were originally collected by by the ARC Centre of Excellence for Coral Reef Studies at James Cook University. They were accessed via the Australian government's database for open government data, data.gov.au (https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69),
+and were hosted in the eAtlas data repository (http://eatlas.org.au/pydio/data/public/833ece.php)
 
-More information on data.gov.au can be found at `https://search.data.gov.au/page/about`, and more information on eAtlas can be found at `https://eatlas.org.au/content/about-e-atlas`.
+More information on data.gov.au can be found at https://search.data.gov.au/page/about, and more information on eAtlas can be found at https://eatlas.org.au/content/about-e-atlas.
 
 Data were accessed 2020-04-10.
 
