@@ -30,6 +30,7 @@
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -164,9 +165,178 @@ coral reefs of the GBRMP:
 \hypertarget{dataset-information}{%
 \section{Dataset Information}\label{dataset-information}}
 
-• Describes source and content of data • Details the wrangling process
-from raw to processed data • Contains a table summarizing the dataset
-structure
+\hypertarget{database-information}{%
+\subsection{Database Information}\label{database-information}}
+
+Data were originally collected by by the ARC Centre of Excellence for
+Coral Reef Studies at James Cook University. They were accessed via the
+Australian government's database for open government data, data.gov.au:
+\url{https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69}
+
+Data files were hosted in the eAtlas data repository:
+\url{http://eatlas.org.au/pydio/data/public/833ece.php}
+
+More information on data.gov.au can be found here:
+\url{https://search.data.gov.au/page/about}
+
+More information on eAtlas can be found here:
+\url{https://eatlas.org.au/content/about-e-atlas}
+
+Data were accessed 2020-04-10.
+
+\hypertarget{data-wrangling}{%
+\subsection{Data Wrangling}\label{data-wrangling}}
+
+From the downloaded dataset, the
+\texttt{E-Atlas\ Data\_NERP\ 8.2\_Dec\ 2014\_fish\_benthos.xlsx} file
+contained two sheets; the first gave data averaged by site and was saved
+in the repository as
+\texttt{data.gov.au\_fish\_benthos\_GBR\_sites\_raw.csv} for wrangling
+and analysis. Three processed files were created from this dataset. To
+create the first processed file,
+\texttt{data.gov.au\_fish\_benthos\_GBR\_sites\_1999\_processed.csv},
+the variables listed in the table below were first selected. Then, rows
+with known outliers -- mean live total coral percent cover and mean live
+hard coral percent cover values that were greater than 100 -- were
+filtered out of the dataset. The second processed file,
+\texttt{data.gov.au\_fish\_benthos\_GBR\_sites\_2004\_processed.csv},
+was created using the same steps plus an additional one: all rows with
+values of \texttt{na} were omitted from the data. This gave a processed
+dataset containing data starting in 2004 rather than 1999. The final
+processed file, \texttt{data.gov.au\_fish\_lme\_2004\_processed.csv},
+was created during data analysis; a column containing predicted values
+based on a mixed-effects linear model was added to
+\texttt{data.gov.au\_fish\_benthos\_GBR\_sites\_2004\_processed.csv} to
+allow the creating of a graph containing trend lines based on the model.
+
+\hypertarget{metadata}{%
+\subsection{Metadata}\label{metadata}}
+
+These data, which were collected between 1999 and 2014 on the inshore
+coral reefs of the Great Barrier Reef Marine Park, contain the average
+percent cover of major benthic categories as well as the average density
+of fish functional groups. Underwater visual census (UVC) methodology
+was used to survey these fish and benthic communities. Within each site,
+UVC surveys were conducted using 5 replicate transects (each 50m x 6m)
+deployed on the reef slope between approximately 4 and 12 meters. Due to
+funding limitations and unpredictable weather events, there were some
+years where data was not collected. Data concerning fish species (Total
+Fish Densit\_mean, Fish Species richness\_mean, Grazers\_mean,
+Corallivores\_mean) began being collected in 2004.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\begin{minipage}[b]{0.44\columnwidth}\raggedright
+Dataset Column\strut
+\end{minipage} & \begin{minipage}[b]{0.32\columnwidth}\raggedright
+Description\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
+Class\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{Year}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Year of data collection\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Integer\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{Region}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+The island group (Palm, Magnetic, Whitsunday or Keppel) of the coral
+reef that was surveyed\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Factor\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{Zone}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Indicates if data were collected in a no-take zone established in 1987
+(NTR 1987), a no-take zone established in 2004 (NTR 2004), or a zone
+where fishing is allowed (Fished)\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Factor\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{Site}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+The ID of the site (where five transect surveys were conducted) within
+the specified zone, region, and year\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Factor\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{Total Fish Densit\_mean}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Mean number of fish observed per 1000 m\textsuperscript{2} at the
+specified site\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Numeric\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{Fish Species richness\_mean}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+The mean number of fish species observed at the specified site\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Numeric\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{Grazers\_mean}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Mean number of fish species listed as `grazers' in the
+\texttt{data.gov.au\_fish\_groups\_status.csv} metadata file\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Numeric\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{Corallivores\_mean}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Mean number of fish species listed as `corallivores' in the
+\texttt{data.gov.au\_fish\_groups\_status.csv} metadata file\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Numeric\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{SCI\_mean}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Mean structural complexity index at each site. Individual SCI values
+range from 1 to 25, with values closer to 1 indicating less structural
+complexity and values closer to 25 indicating more structural
+complexity. Each SCI estimate was calculated by multiplying visual
+estimates of reef slope angle (1-5) by reef slope rugosity (1-5). These
+values were estimated for each 10m section of each 50m transect for a
+total of 5 estimates per transect. With 5 transects deployed per site, a
+total of 25 SCI values were estimated per site. These 25 values were
+averaged to obtain the mean SCI.\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Numeric\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{LCC\_mean}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Mean live hard and soft coral \% cover\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Numeric\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{LHC\_mean}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Mean live hard coral \% cover\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Numeric\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.44\columnwidth}\raggedright
+\textbf{MAC\_mean}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright
+Mean macroalgae \% cover (includes only fleshy algae, not turf
+algae)\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Numeric\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
 \newpage
 
@@ -334,12 +504,11 @@ percent coral cover were significantly different among the three GBRMP
 zones in the data (no-take since 1987, no-take since 2004, and fished),
 three analysis of variance (ANCOVA) models were used. Zone was not found
 to significantly affect mean percent live coral cover
-(F\textasciitilde{}2, 703\textasciitilde{} = 0.1649, p \textgreater{}
-0.1) or mean fish species richness (F\textasciitilde{}2,
-467\textasciitilde{} = 2.396, p \textgreater{} 0.05). However, zone did
-significantly affect mean fish species density (F\textasciitilde{}2,
-467\textasciitilde{} = 6.137, p \textless{} 0.01) with the no-take zones
-from 2004 increasing mean fish density by 39.780\% (t = 3.171, p
+(F\textsubscript{2,703} = 0.1649, p \textgreater{} 0.1) or mean fish
+species richness (F\textsubscript{2,467} = 2.396, p \textgreater{}
+0.05). However, zone did significantly affect mean fish species density
+(F\textsubscript{2,467} = 6.137, p \textless{} 0.01) with the no-take
+zones from 2004 increasing mean fish density by 39.780\% (t = 3.171, p
 \textless{} 0.01). A post hoc Tukey test was used to evaluate pairwise
 relationships of different zones and extract groupings based on these
 pairwise relationships (Figure 9).

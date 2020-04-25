@@ -16,8 +16,6 @@ mainfont: Times New Roman
 \newpage
 \tableofcontents 
 \newpage
-\listoftables 
-\newpage
 \listoffigures 
 \newpage
 
@@ -71,9 +69,41 @@ This project sought to answer the following questions about the inshore coral re
 
 # Dataset Information
 
-• Describes source and content of data
-• Details the wrangling process from raw to processed data
-• Contains a table summarizing the dataset structure
+## Database Information
+
+Data were originally collected by by the ARC Centre of Excellence for Coral Reef Studies at James Cook University. They were accessed via the Australian government's database for open government data, data.gov.au: https://data.gov.au/data/dataset/031f0668-b874-48fc-a058-f146c2f6fc69
+
+Data files were hosted in the eAtlas data repository: http://eatlas.org.au/pydio/data/public/833ece.php 
+
+More information on data.gov.au can be found here: https://search.data.gov.au/page/about
+
+More information on eAtlas can be found here: https://eatlas.org.au/content/about-e-atlas
+
+Data were accessed 2020-04-10.
+
+## Data Wrangling
+
+From the downloaded dataset, the `E-Atlas Data_NERP 8.2_Dec 2014_fish_benthos.xlsx` file contained two sheets; the first gave data averaged by site and was saved in the repository as `data.gov.au_fish_benthos_GBR_sites_raw.csv` for wrangling and analysis. Three processed files were created from this dataset. To create the first processed file, `data.gov.au_fish_benthos_GBR_sites_1999_processed.csv`, the variables listed in the table below were first selected. Then, rows with known outliers -- mean live total coral percent cover and mean live hard coral percent cover values that were greater than 100 -- were filtered out of the dataset. The second processed file, `data.gov.au_fish_benthos_GBR_sites_2004_processed.csv`, was created using the same steps plus an additional one: all rows with values of `na` were omitted from the data. This gave a processed dataset containing data starting in 2004 rather than 1999. The final processed file, `data.gov.au_fish_lme_2004_processed.csv`, was created during data analysis; a column containing predicted values based on a mixed-effects linear model was added to `data.gov.au_fish_benthos_GBR_sites_2004_processed.csv` to allow the creating of a graph containing trend lines based on the model.
+
+## Metadata
+
+These data, which were collected between 1999 and 2014 on the inshore coral reefs of the Great Barrier Reef Marine Park, contain the average percent cover of major benthic categories as well as the average density of fish functional groups. Underwater visual census (UVC) methodology was used to survey these fish and benthic communities. Within each site, UVC surveys were conducted using 5 replicate transects (each 50m x 6m) deployed on the reef slope between approximately 4 and 12 meters. Due to funding limitations and unpredictable weather events, there were some years where data was not collected. Data concerning fish species (Total Fish Densit_mean, Fish Species richness_mean, Grazers_mean, Corallivores_mean) began being collected in 2004.
+
+Dataset Column | Description | Class
+---------------| ----------- | -----
+**Year** | Year of data collection | Integer
+**Region** | The island group (Palm, Magnetic, Whitsunday or Keppel) of the coral reef that was surveyed | Factor
+**Zone** | Indicates if data were collected in a no-take zone established in 1987 (NTR 1987), a no-take zone established in 2004 (NTR 2004), or a zone where fishing is allowed (Fished) | Factor
+**Site** | The ID of the site (where five transect surveys were conducted) within the specified zone, region, and year | Factor
+**Total Fish Densit_mean** | Mean number of fish observed per 1000 m^2^ at the specified site | Numeric
+**Fish Species richness_mean** | The mean number of fish species observed at the specified site | Numeric
+**Grazers_mean** | Mean number of fish species listed as ‘grazers’ in the `data.gov.au_fish_groups_status.csv` metadata file | Numeric
+**Corallivores_mean** | Mean number of fish species listed as ‘corallivores’ in the `data.gov.au_fish_groups_status.csv` metadata file | Numeric
+**SCI_mean** | Mean structural complexity index at each site. Individual SCI values range from 1 to 25, with values closer to 1 indicating less structural complexity and values closer to 25 indicating more structural complexity. Each SCI estimate was calculated by multiplying visual estimates of reef slope angle (1-5) by reef slope rugosity (1-5). These values were estimated for each 10m section of each 50m transect for a total of 5 estimates per transect. With 5 transects deployed per site, a total of 25 SCI values were estimated per site. These 25 values were averaged to obtain the mean SCI. | Numeric
+**LCC_mean** | Mean live hard and soft coral % cover | Numeric
+**LHC_mean** | Mean live hard coral % cover | Numeric
+**MAC_mean** | Mean macroalgae % cover (includes only fleshy algae, not turf algae) | Numeric
+
 
 \newpage
 
@@ -367,7 +397,7 @@ print(Fish_densit_plot)
 
 ## Question 3: Do no-take zones established in 1987, no-take zones established in 2004, and fished zones have different mean amounts of live hard coral cover, fish density, and fish species richness?
 
-To determine if mean fish density, mean fish species richness, and mean percent coral cover were significantly different among the three GBRMP zones in the data (no-take since 1987, no-take since 2004, and fished), three analysis of variance (ANCOVA) models were used. Zone was not found to significantly affect mean percent live coral cover (F~2, 703~ = 0.1649, p > 0.1) or mean fish species richness (F~2, 467~ = 2.396, p > 0.05). However, zone did significantly affect mean fish species density (F~2, 467~ = 6.137, p < 0.01) with the no-take zones from 2004 increasing mean fish density by 39.780% (t = 3.171, p < 0.01). A post hoc Tukey test was used to evaluate pairwise relationships of different zones and extract groupings based on these pairwise relationships (Figure 9). 
+To determine if mean fish density, mean fish species richness, and mean percent coral cover were significantly different among the three GBRMP zones in the data (no-take since 1987, no-take since 2004, and fished), three analysis of variance (ANCOVA) models were used. Zone was not found to significantly affect mean percent live coral cover (F~2,703~ = 0.1649, p > 0.1) or mean fish species richness (F~2,467~ = 2.396, p > 0.05). However, zone did significantly affect mean fish species density (F~2,467~ = 6.137, p < 0.01) with the no-take zones from 2004 increasing mean fish density by 39.780% (t = 3.171, p < 0.01). A post hoc Tukey test was used to evaluate pairwise relationships of different zones and extract groupings based on these pairwise relationships (Figure 9). 
 
 ```{r Zoning Plots, echo = FALSE, fig.height = 7, fig.width = 6, fig.align = "center", fig.cap = "Modeled relationship between the GBRMP zone and the mean percent cover of living hard coral from 1999-2014 (bottom), the natural log of fish density (middle) from 2004-2014, and fish species richness from 2004-2014 (top). Letters indicating pairwise relationships among zones are above each bar; differences in letters between zones indicate statistical differences."}
 #LHC
@@ -413,6 +443,11 @@ plot_grid(Fish_species_rich_plot, Fish_densit_zone_plot, LHC_zone_plot, ncol = 1
 
 • Major findings are summarized
 • Conclusions relate back to the original research context
+
+Summarize your major findings from your analyses in a few paragraphs. What conclusions do you draw from your findings? Relate your findings back to the original research questions and rationale.
+
+
+
 
 \newpage
 
